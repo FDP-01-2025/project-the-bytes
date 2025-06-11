@@ -1,5 +1,5 @@
-#ifndef DIFICULTAD
-#define DIFICULTAD
+#ifndef DIFICULTAD_H
+#define DIFICULTAD_H
 using namespace std;
 
 void dificultad();
