@@ -54,4 +54,39 @@ void Tablero_1()
         Sleep(2000); // Retardo de 2 segundos
         Tablero_1(); // Se llama a la funcion para que sea "recursiva"
     }
+    cout << "Acabas de atacar el tablero de tu oponente asi:\n\n"
+         << endl;
+    for (int i = 0; i < filas; i++) // Se recorren las filas
+    {
+        for (int j = 0; j < elementos; j++) // Se recorren las columnas
+        {
+            if (matrix_3[i][j] == 1) // Se compara si se ataco y no estaba el valor de 1
+            {
+                matrix_barco_enemigo[i][j] = 'X'; // Caracter que se mostrara al atacar una coordenada
+            }
+            if (matrix_3[i][j] == 2)
+            {
+                matrix_barco_enemigo[i][j] = 'B'; // caracter "B" para demostrar que se ataco yq eu si habia un barco
+            }
+            if (matrix_3[i][j] == 0)
+            {
+                matrix_barco_enemigo[i][j] = '~'; // Caracter "~" para rellenar las posiciones por atacar
+            }
+            cin >> matrix_barco_enemigo[i][j]; // Impresion del tablero atacado
+        }
+        cout << endl; // Salto de linea por tema de orden
+    }
+    cout << "\nHas atacado " << ataques << " veces" << endl;                 // Se muestran la cantidad de ataques que hizo el usuario
+    cout << "\nHas derribado " << barcos_derribados << "/" << nivel << endl; // Muestra el numero de barcos derribados
+    Sleep(4000);                                                             // Retardo de 4 segundos
+
+    if (barcos_derribados == nivel) // Condicion para saber si los barcos que derribo coinciden con el nivel para sabersi gano
+    {
+        system("cls");                                                          // Para limpiar la pantalla
+        cout << "\n\n\n\n\n\t\t\t!FELICIDADES, HAS GANADO EL JUEGO!\n\n\n\n\n"; // Mensaje de ganador
+        exit(-1);                                                               // Para cerrar el programa donde sea que se encuentre
+    }
+    system("cls");    // Limpiar la pantalla
+    void Tablero_2(); // Se llama a la variable "Tablero_2"
+    return;           // Finaliza la funcion Tablero_1
 }
