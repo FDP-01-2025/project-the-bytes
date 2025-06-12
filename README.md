@@ -1,16 +1,24 @@
-# Proyecto de C++ - [Battle ship]
+# NOMBRE DEL JUEGO: [BATTLE LITTLESHIPS]
 
 ## Descripción del Proyecto
 
-Breve descripción del juego, su propósito, cómo se juega y cualquier otro detalle importante que describa la idea general del proyecto.
+Battle Littleships es una variacion de el juego original Battleship, que va dirigido especificamente para ninos, dentro de este videojuego el jugador debera enfrentarse contra la CPU con la posibilidad de jugar en 3 dificultades: Facil, Normal y dificil. Haciendo que cada jugador se proponga retos de intentar ganarle a la CPU.
 
-Battleship es un juego de estrategia de dos jugadores que involucra la búsqueda y destrucción de las embarcaciones enemigas en una cuadricula. Cada jugador coloca sus barcos en la cuadricula en el orden que desee mediante coordenadas en secreto y el objetivo es hundir los barcos del rival.
+Esta variacion de Battleship se refiere a un juego de estrategia entre un jugador y la CPU que involucra la búsqueda y destrucción de las embarcaciones enemigas en una cuadricula. El jugador y la CPU coloca sus barcos en la cuadricula en el orden que desee mediante coordenadas en secreto y el objetivo es hundir los barcos del rival.
 
-La jugabilidad de Battleship consta de los siguientes elementos:
+## Jugabilidad de BATTLE LITTLESHIPS
 
-1. Cada jugador tiene dos cuadrículas de 8x8. Una para colocar sus propios barcos y otra para registrar sus ataques contra el enemigo.
-2. Cada jugador dispone de una flota de barcos de diferentes tamaños (por ejemplo: portaaviones, acorazado,      submarino, destructor, patrullero), que ocupan de 2 a 5 casillas.
-3. Los jugadores se alternan los turnos diciendo una coordenada y se responde “fallo” si no impacto con un barco y   “acertó” si impacto.
+1. El jugador y el CPU cuentan con un tablero (10x10) para colocar sus embarcaciones.
+
+2. El jugador y el CPU poseen 10 barcos unitarios (1x1), esto para que se lleguen a colocar mas barcos y se encuentren mas dispersos entre el tablero, evitando asi la suposicion de posiciones entre los barcos.
+
+3. Para disparar dentro del tablero se deben de escribir las coordenadas en Y y luego en X para que se dispare en esa posicion. Si las coordenadas a las que se intenta disparar ya han sido atacadas antes. Se pedira que se escriban otras coordenadas.
+
+4. Los turnos para disparar en unas coordenadas seran intercalados entre el jugador y el CPU.
+
+5.Modo
+
+
 4. Los jugadores marcan en su tablero de ataque los resultados para hacer seguimiento de sus intentos y aciertos.
 5. Gana el jugador que primero hunde toda la flota enemiga.
 
