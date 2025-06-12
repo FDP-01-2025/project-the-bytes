@@ -1,6 +1,7 @@
 #include <iostream>
-#include <time.h>
-#include <math.h>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
 #include <windows.h>
 #include "Colocar.h"
 #include "Dificultad.h"
@@ -11,6 +12,7 @@
 #include "Tablero_1.h"
 #include "Tablero_2.h"
 #include "Transicion.h"
+
 
 using namespace std;
 
@@ -23,7 +25,7 @@ void rellenar() // Se rellena la matriz para crear eltablero de juego
 {
     {
         for (int i = 0; i < filas; i++)         // Se recorren las filas dentro del tablero
-            for (int j = 0; i < elementos; i++) // Se recorren las columnas dentro del tablero
+            for (int j = 0; j < elementos; j++) // Se recorren las columnas dentro del tablero
             {
                 matrix[i][j] = '~';       // El tablero para el jugador
                 matrix_alea2[i][j] = '~'; // El tablero para la computadora

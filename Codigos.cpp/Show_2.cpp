@@ -1,6 +1,7 @@
 #include <iostream>
-#include <time.h>
-#include <math.h>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
 #include <windows.h>
 #include "Colocar.h"
 #include "Dificultad.h"
@@ -25,7 +26,7 @@ void show_2()
     cout << "Acabas de posicionar tus barcos de esta manera:\n\n";
     for (int i = 0; i < filas; i++) // Recorrido de las filas
     {
-        for (int j = 0; i < elementos; j++) // Recorrido de las columnas
+        for (int j = 0; j < elementos; j++) // Recorrido de las columnas
         {
             if (matrix_2[i][j] == 1) // Se lee matrix_2 para determinar el ubicacion y posicion de los barcos
             {

@@ -1,6 +1,7 @@
 #include <iostream>
-#include <time.h>
-#include <math.h>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
 #include <windows.h>
 #include "Colocar.h"
 #include "Dificultad.h"
@@ -11,6 +12,7 @@
 #include "Tablero_1.h"
 #include "Tablero_2.h"
 #include "Transicion.h"
+
 
 const int filas = 10;
 const int elementos = 10;
