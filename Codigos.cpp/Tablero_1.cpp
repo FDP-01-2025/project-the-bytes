@@ -54,4 +54,4 @@ void Tablero_1()
         Sleep(2000); // Retardo de 2 segundos
         Tablero_1(); // Se llama a la funcion para que sea "recursiva"
     }
-
+}
