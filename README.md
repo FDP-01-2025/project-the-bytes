@@ -16,7 +16,16 @@ Esta variacion de Battleship se refiere a un juego de estrategia entre un jugado
 
 4. Los turnos para disparar en unas coordenadas seran intercalados entre el jugador y el CPU.
 
-5.Modo
+## Modos de juego
+
+|       ##Facil         |  ##Medio        |  ##Dificil      |
+|-----------------------|-----------------|-----------------|
+|Debes de derribarle 1  | Dato 2          | Dato 3          |
+|barco a la CPU para    | Dato B          | Dato C          |
+|ganar. Pero si la CPU  | Dato B          | Dato C          |
+|te derriba 2 barcos.   | Dato B          | Dato C          |
+|Acabo el juego para ti.| Dato B          | Dato C          |
+
 
 
 4. Los jugadores marcan en su tablero de ataque los resultados para hacer seguimiento de sus intentos y aciertos.
