@@ -45,14 +45,14 @@ void Computer::Update_Coord(int i)
 		{
 			srand((unsigned int)time(NULL)); // To randomize time to generate a number aleatory
 
-			coordenateX = 1 + (rand() % 10); //To randomize the coordenate in X
-			coordenateY = 1 + (rand() % 10); //To randomize the coordenate in Y
+			coordenateX = 1 + (rand() % 10); // To randomize the coordenate in X
+			coordenateY = 1 + (rand() % 10); // To randomize the coordenate in Y
 
-			if (i < 7) //Position is necesary until the last ship (6)
-			{ 
+			if (i < 7) // Position is necesary until the last ship (6)
+			{
 				posicion = rand() % 2;
 
-				switch (posicion)
+				switch (posicion) // Two cases, Horizontal or Vertical
 				{
 				case 0:
 					pos = 'Horizontal';
@@ -67,135 +67,141 @@ void Computer::Update_Coord(int i)
 
 	if (i < 7)
 	{
-		while (true)
-		{ // It will stop if it's okay to put ship into board
-			if (pos == 'Vertical')
-			{ // VERTICAL POSITION **************************************************************
-				if (i == 1)
+		while (true) // It gonna stop if it's ok to put ships into de gameboard
+		{
+			if (pos == 'Vertical') // It is for the vertical position
+			{
+				if (i == 1) // Size of the ship (one) box
 				{
-					if (coordenateX < 8)
-					{ // Ship wouldn't pass a bottom border
+					if (coordenateX < 8) // The ship must never leave the limits
+					{
 						if (gameBoard[coordenateX + 1][coordenateY] == 0 && gameBoard[coordenateX + 2][coordenateY] == 0 && gameBoard[coordenateX + 3][coordenateY] == 0)
-						{ // Checking if 4 long ship coordinates are free for ship
+						{
 							gameBoard[coordenateX][coordenateY] = 1;
 							gameBoard[coordenateX + 1][coordenateY] = 1;
 							gameBoard[coordenateX + 2][coordenateY] = 1;
 							gameBoard[coordenateX + 3][coordenateY] = 1;
 							break;
+							// Checking if four long ship coordinates are free for ship
 						}
 						else
 						{
 							repeatEntrance = true;
 						}
 					}
-					else
-					{ // ship passes a border
-						repeatEntrance = true;
-					}
-				}
-				else if (i >= 2 && i < 4)
-				{
-					if (coordenateX < 9)
-					{ // Ship wouldn't pass a bottom border
-						if (gameBoard[coordenateX + 1][coordenateY] == 0 && gameBoard[coordenateX + 2][coordenateY] == 0)
-						{ // Checking if 3 long ship coordinates are free for ship
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX + 1][coordenateY] = 1;
-							gameBoard[coordenateX + 2][coordenateY] = 1;
-							break;
-						}
-						else
-						{
-							repeatEntrance = true;
-						}
-					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeatEntrance = true;
 					}
 				}
-				else if (i > 3 && i < 7)
+				else if (i >= 2 && i < 4) // Size of the ship (two) box
 				{
-					if (coordenateX < 10)
-					{ // Ship wouldn't pass a bottom border
-						if (gameBoard[coordenateX + 1][coordenateY] == 0)
-						{ // Checking if 2 long ship coordinates are free for ship
+					if (coordenateX < 9) // The ship must never leave the limits
+					{
+						if (gameBoard[coordenateX + 1][coordenateY] == 0 && gameBoard[coordenateX + 2][coordenateY] == 0)
+						{
 							gameBoard[coordenateX][coordenateY] = 1;
 							gameBoard[coordenateX + 1][coordenateY] = 1;
+							gameBoard[coordenateX + 2][coordenateY] = 1;
 							break;
+							// Checking if three long ship coordinates are free for ship
 						}
 						else
 						{
 							repeatEntrance = true;
 						}
 					}
-					else
+					else // The ship exceeded the limits
+					{
+						repeatEntrance = true;
+					}
+				}
+				else if (i > 3 && i < 7) // Size of the ship (three) box
+				{
+					if (coordenateX < 10) // The ship must never leave the limits
+					{
+						if (gameBoard[coordenateX + 1][coordenateY] == 0)
+						{
+							gameBoard[coordenateX][coordenateY] = 1;
+							gameBoard[coordenateX + 1][coordenateY] = 1;
+							break;
+							// Checking if two long ship coordinates are free for ship
+						}
+						else
+						{
+							repeatEntrance = true;
+						}
+					}
+					else // The ship exceeded the limits
 					{
 						repeatEntrance = true;
 					}
 				}
 			}
-			else if (pos == 'Horizontal')
-			{ // HORIZONTAL POSITION **************************************************************
-				if (i == 1)
+			else if (pos == 'Horizontal') // It is for the vertical position
+			{
+				if (i == 1) // Size of the ship (one) box
 				{
-					if (coordenateY < 8)
-					{ // Ship wouldn't pass a RIGHT border
+					if (coordenateY < 8) // The ship must never leave the limits
+					{
 						if (gameBoard[coordenateX][coordenateY + 1] == 0 && gameBoard[coordenateX][coordenateY + 2] == 0 && gameBoard[coordenateX][coordenateY + 3] == 0)
-						{ // Checking if 4 long ship coordinates are free for ship
+						{ // Checking if four long ship coordinates are free for ship
 							gameBoard[coordenateX][coordenateY] = 1;
 							gameBoard[coordenateX][coordenateY + 1] = 1;
 							gameBoard[coordenateX][coordenateY + 2] = 1;
 							gameBoard[coordenateX][coordenateY + 3] = 1;
 							break;
+							// Checking if four long ship coordinates are free for ship
 						}
 						else
 						{
 							repeatEntrance = true;
 						}
 					}
-					else
-					{ // ship passes a border
-						repeatEntrance = true;
-					}
-				}
-				else if (i >= 2 && i < 4)
-				{
-					if (coordenateY < 9)
-					{ // Ship wouldn't pass a RIGHT border
-						if (gameBoard[coordenateX][coordenateY + 1] == 0 && gameBoard[coordenateX][coordenateY + 2] == 0)
-						{ // Checking if 3 long ship coordinates are free for ship
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX][coordenateY + 1] = 1;
-							gameBoard[coordenateX][coordenateY + 2] = 1;
-							break;
-						}
-						else
-						{
-							repeatEntrance = true;
-						}
-					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeatEntrance = true;
 					}
 				}
-				else if (i > 3 && i < 7)
+				else if (i >= 2 && i < 4) // Size of the ship (two) box
 				{
-					if (coordenateY < 10)
-					{ // Ship wouldn't pass a RIGHT border
-						if (gameBoard[coordenateX][coordenateY + 1] == 0)
-						{ // Checking if 2 long ship coordinates are free for ship
+					if (coordenateY < 9) // The ship must never leave the limits
+					{
+						if (gameBoard[coordenateX][coordenateY + 1] == 0 && gameBoard[coordenateX][coordenateY + 2] == 0)
+						{
 							gameBoard[coordenateX][coordenateY] = 1;
 							gameBoard[coordenateX][coordenateY + 1] = 1;
+							gameBoard[coordenateX][coordenateY + 2] = 1;
 							break;
+							// Checking if three long ship coordinates are free for ship
 						}
 						else
 						{
 							repeatEntrance = true;
 						}
 					}
-					else
+					else // The ship exceeded the limits
+					{
+						repeatEntrance = true;
+					}
+				}
+				else if (i > 3 && i < 7) // Size of the ship (three) box
+				{
+					if (coordenateY < 10) // The ship must never leave the limits
+					{
+						if (gameBoard[coordenateX][coordenateY + 1] == 0)
+						{
+							gameBoard[coordenateX][coordenateY] = 1;
+							gameBoard[coordenateX][coordenateY + 1] = 1;
+							break;
+							// Checking if two long ship coordinates are free for ship
+						}
+						else
+						{
+							repeatEntrance = true;
+						}
+					}
+					else // The ship exceeded the limits
 					{
 						repeatEntrance = true;
 					}
@@ -203,16 +209,16 @@ void Computer::Update_Coord(int i)
 			}
 			if (repeatEntrance)
 			{
-				srand((unsigned int)time(NULL)); // random time to generate random number EVERYTIME
+				srand((unsigned int)time(NULL)); // To randomize time to generate a number aleatory
 
-				coordenateX = 1 + (rand() % 10);
+				coordenateX = 1 + (rand() % 10); // To randomize the
 				coordenateY = 1 + (rand() % 10);
 
-				if (i < 7)
-				{ // Position is needed UNTIL 7th ship
+				if (i < 7) // Posicion is mandatory until the last ship (6)
+				{
 					posicion = rand() % 2;
 
-					switch (posicion)
+					switch (posicion) // Two options, posicion Horizontal or posicion Vertical
 					{
 					case 0:
 						pos = 'Horizontal';
@@ -225,7 +231,7 @@ void Computer::Update_Coord(int i)
 			}
 		}
 	}
-	for (int p = 0; p < 4; p++)
+	for (int p = 0; p < 4; p++) // the value of all the boxes surrounding (x, y) from 0 to 2.
 	{
 
 		if (gameBoard[coordenateX + 1][coordenateY] == 0)
