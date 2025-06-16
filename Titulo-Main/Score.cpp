@@ -4,18 +4,21 @@ using namespace std;
 
 struct Player
 {
-    char nombre[50]; 
-    int partidasGanadas;
+    // The following variables will be changed in the future to call them in another file
+    char name[50]; 
+    int victories;
+    int loses;
+    int gamesPlayed;
 };
 
 int main(){
-string usuario;
+string username;
     cout<<"Insert your username: ";
-    cin>>usuario;
+    cin>>username;
     
-    cout<<"Partidas jugadas: "<<partidas<<endl;
-    cout<<"Partidas perdidas: "<<Ganadas<<endl;
-    cout<<"Partidas ganadas: "<<perdidas<<endl;
+    cout<<"Games played: "<<gamesPlayed<<endl;
+    cout<<"Games lost: "<<victories<<endl;
+    cout<<"Games victories: "<<loses<<endl;
 
     ofstream archivo("player.txt", ios::app);
 
