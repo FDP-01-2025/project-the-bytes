@@ -30,13 +30,13 @@ void showAnimatedTitle() // Function to display the title with vertical animatio
 )";
 
     int consoleHeight = getconsoleheight();
-    int titleLines = 9; // número de líneas que tiene el título
+    int titleLines = 9; //numbers of lines that the tittle has
     int spaceAbove = (consoleHeight - titleLines) / 2;
 
     for (int i = 0; i < spaceAbove; ++i)
     {
         cout << endl;
-        Sleep(3000 / spaceAbove); // efecto de animación en 3 segundos
+        Sleep(3000 / spaceAbove); //animation effect that happens in 3 seconds
     }
 
     cout << title;
