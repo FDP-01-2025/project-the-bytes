@@ -24,6 +24,9 @@ string username;
 
     // Hola
     if (file.is_open()) {
+        file << username <<endl;
+        file << "Wins: "<<victories<<endl;
+        file << "Loses: "<<loses<<endl;
 
     }
 
