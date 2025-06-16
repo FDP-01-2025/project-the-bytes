@@ -20,7 +20,12 @@ string username;
     cout<<"Games lost: "<<victories<<endl;
     cout<<"Games victories: "<<loses<<endl;
 
-    ofstream archivo("player.txt", ios::app);
+    ofstream file("player.txt", ios::app);
+
+    // Hola
+    if (file.is_open()) {
+
+    }
 
     return 0;
 }
