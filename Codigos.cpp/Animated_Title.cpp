@@ -1,8 +1,7 @@
 #include <iostream>
-#include <windows.h> // To use Sleep and manipulate the terminal 
+#include <windows.h> // To use Sleep and manipulate the terminal
 #include "Animated_Title.h"
 using namespace std;
-
 
 int getconsoleheight() // This is a function to get the height of the console
 {
@@ -10,7 +9,7 @@ int getconsoleheight() // This is a function to get the height of the console
     int rows = 25; // Default value
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
     {
-        rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1; //The size of the console modified
+        rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1; // The size of the console modified
     }
     return rows;
 }
@@ -30,13 +29,13 @@ void showAnimatedTitle() // Function to display the title with vertical animatio
 )";
 
     int consoleHeight = getconsoleheight();
-    int titleLines = 9; // número de líneas que tiene el título
+    int titleLines = 9; // Number of the lines that have the title
     int spaceAbove = (consoleHeight - titleLines) / 2;
 
     for (int i = 0; i < spaceAbove; ++i)
     {
         cout << endl;
-        Sleep(3000 / spaceAbove); // efecto de animación en 3 segundos
+        Sleep(3000 / spaceAbove); // Efect to animated for 3 seconds
     }
 
     cout << title;
