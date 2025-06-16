@@ -10,7 +10,7 @@ Battleship es un juego enfocado en la estrategia y en la destruccion de embarcac
 
 2. A ambos se le daran la siguiente cantidad de barcos:
   
-|                               TIPOS DE EMBARCACIONES                          |
+                               TIPOS DE EMBARCACIONES                          
 |-------------------|-------------------|-------------------|-------------------|
 |La maquina  y el   |La maquina y el    |La maquina y el    |La maquina y el    |
 |jugador cuentan con|jugador cuentan con|jugador cuentan con|jugador cuentan con|
