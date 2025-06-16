@@ -1,5 +1,8 @@
 #include <iostream>
+#include<cstdlib> //To system("cls")
 using namespace std;
+
+
 
 int main () {
 

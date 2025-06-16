@@ -8,7 +8,7 @@ using namespace std;
 
 int gameBoard[Filas + 1][Columns + 1] = {0};
 
-Computer::Computer()
+CPU::CPU()
 {
 	srand((unsigned int)time(NULL)); // To generate a random number
 	pos = ' ';
@@ -27,7 +27,7 @@ Computer::Computer()
 	}
 }
 
-void Computer::Update_Coord(int i)
+void CPU::Update_Coord(int i)
 {
 	bool repeatEntrance = false;
 

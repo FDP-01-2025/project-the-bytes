@@ -1,22 +1,22 @@
-#ifndef __Computer__
-#define __Computer__
+#ifndef __InteligentCPU__
+#define __InteligentCPU__
 
 using namespace std;
 
-const int Filas = 12;
+const int Rows = 12;
 const int Columns = 12;
-extern int gameBoard[Filas + 1][Columns + 1]; // Se usara para el tablero mas adelante
+extern int gameBoard[Rows + 1][Columns + 1]; // Se usara para el tablero mas adelante
 
-class Computer
+class CPU
 {
 private:
-	int coordenateX, coordenateY;
 	int posicion;
+	int coordenateX, coordenateY;
 	char pos;
 
 public:
-	Computer();
+	CPU();
 	void Update_Coord(int i);
 };
 
-#endif // !__Computer__
+#endif // __InteligentCPU__
