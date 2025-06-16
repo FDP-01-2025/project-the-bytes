@@ -16,8 +16,8 @@ Battleship es un juego enfocado en la estrategia y en la destruccion de embarcac
 |jugador cuentan con|jugador cuentan con|jugador cuentan con|jugador cuentan con|
 |un barco de cuatro |dos barcos de tres |tres barcos de dos |cuatro barcos de   |
 |espacios.          |espacios.          |espacios.          |un espacio.        |
-|(Leviatan      )   |(Destructores)     |(Cruceros)         |(Escoltas)         |
-|-------------------|-------------------|-------------------|-------------------|
+|(Leviatan)         |(Destructores)     |(Cruceros)         |(Escoltas)         |
+
 
 2. El jugador y el CPU poseen 10 barcos unitarios (1x1), esto para que se lleguen a colocar mas barcos y se encuentren mas dispersos entre el tablero, evitando asi la suposicion de posiciones entre los barcos.
 
