@@ -1,4 +1,4 @@
-#include "Computadora.h"
+#include "InteligenCPU.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int gameBoard[Filas + 1][Columns + 1] = {0};
+int gameBoard[Rows + 1][Columns + 1] = {0};
 
 CPU::CPU()
 {
@@ -27,7 +27,7 @@ CPU::CPU()
 	}
 }
 
-void CPU::Update_Coord(int i)
+void CPU::coordenateUpdate(int i)
 {
 	bool repeatEntrance = false;
 

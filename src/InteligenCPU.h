@@ -16,7 +16,7 @@ private:
 
 public:
 	CPU();
-	void Update_Coord(int i);
+	void coordenateUpdate(int i);
 };
 
 #endif // __InteligentCPU__

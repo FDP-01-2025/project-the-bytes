@@ -1,14 +1,23 @@
-# NOMBRE DEL JUEGO: [BATTLE LITTLESHIPS]
+# NOMBRE DEL JUEGO: [BATTLE SHIP]
 
 ## Descripción del Proyecto
 
-Battle Littleships es una variacion de el juego original Battleship, que va dirigido especificamente para ninos, dentro de este videojuego el jugador debera enfrentarse contra la CPU con la posibilidad de jugar en 3 dificultades: Facil, Normal y dificil. Haciendo que cada jugador se proponga retos de intentar ganarle a la CPU.
+Battleship es un juego enfocado en la estrategia y en la destruccion de embarcaciones enemigas, en Battleship te embarcaras en una aventura en contra de la Inteligent CPU, una maquina que esta entrenada para que logre adivinar las posibles ubicaciones de tus barcos, haciendo vivir este juego como una experiencia sin frenos, en donde ganara quien logre destruir todas las embarcaciones del rival. Crees que puedas derrotarla?
 
-Esta variacion de Battleship se refiere a un juego de estrategia entre un jugador y la CPU que involucra la búsqueda y destrucción de las embarcaciones enemigas en una cuadricula. El jugador y la CPU coloca sus barcos en la cuadricula en el orden que desee mediante coordenadas en secreto y el objetivo es hundir los barcos del rival.
+## Jugabilidad de Battleship
 
-## Jugabilidad de BATTLE LITTLESHIPS
+1. Tu y la Inteligent CPU tendran un tablero 10x10 en donde podran colocar sus barcos
 
-1. El jugador y el CPU cuentan con un tablero (10x10) para colocar sus embarcaciones.
+2. A ambos se le daran la siguiente cantidad de barcos:
+  
+|                               TIPOS DE EMBARCACIONES                          |
+|-------------------------------------------------------------------------------|
+|La maquina  y el   |La maquina y el    |La maquina y el    |La maquina y el    |
+|jugador cuentan con|jugador cuentan con|jugador cuentan con|jugador cuentan con|
+|un barco de cuatro |dos barcos de tres |tres barcos de dos |cuatro barcos de   |
+|espacios.          |espacios.          |espacios.          |un espacio.        |
+|(Leviatan      )   |(Destructores)     |(Cruceros)         |(Escoltas)         |
+|-------------------|-------------------|-------------------|-------------------|
 
 2. El jugador y el CPU poseen 10 barcos unitarios (1x1), esto para que se lleguen a colocar mas barcos y se encuentren mas dispersos entre el tablero, evitando asi la suposicion de posiciones entre los barcos.
 
@@ -18,13 +27,7 @@ Esta variacion de Battleship se refiere a un juego de estrategia entre un jugado
 
 ## Modos de juego
 
-|       ##Facil         |  ##Medio        |  ##Dificil      |
-|-----------------------|-----------------|-----------------|
-|Debes de derribarle 1  | Dato 2          | Dato 3          |
-|barco a la CPU para    | Dato B          | Dato C          |
-|ganar. Pero si la CPU  | Dato B          | Dato C          |
-|te derriba 2 barcos.   | Dato B          | Dato C          |
-|Acabo el juego para ti.| Dato B          | Dato C          |
+
 
 
 
