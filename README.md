@@ -10,18 +10,17 @@ Battleship es un juego enfocado en la estrategia y en la destruccion de embarcac
 
 2. A ambos se le daran la siguiente cantidad de barcos:
   
-                               TIPOS DE EMBARCACIONES                          
+|     Leviatan      |   Destructores    |      Cruceros     |      Escoltas     |         
 |-------------------|-------------------|-------------------|-------------------|
 |La maquina  y el   |La maquina y el    |La maquina y el    |La maquina y el    |
 |jugador cuentan con|jugador cuentan con|jugador cuentan con|jugador cuentan con|
 |un barco de cuatro |dos barcos de tres |tres barcos de dos |cuatro barcos de   |
 |espacios.          |espacios.          |espacios.          |un espacio.        |
-|(Leviatan)         |(Destructores)     |(Cruceros)         |(Escoltas)         |
 
+3. Para disparar, se debera colocar primero la coordenada en Y y luego la coordenada en X, por ejemplo (A4), siendo A un punto dentro de la coordenada "Y" y 4 un punto dentro de la coordenada "X".
 
-2. El jugador y el CPU poseen 10 barcos unitarios (1x1), esto para que se lleguen a colocar mas barcos y se encuentren mas dispersos entre el tablero, evitando asi la suposicion de posiciones entre los barcos.
+4. Para hacerlo mas emocionante, por cada impacto en un barco, sea rival o tuyo, se sumara 1 al contador de puntos. 
 
-3. Para disparar dentro del tablero se deben de escribir las coordenadas en Y y luego en X para que se dispare en esa posicion. Si las coordenadas a las que se intenta disparar ya han sido atacadas antes. Se pedira que se escriban otras coordenadas.
 
 4. Los turnos para disparar en unas coordenadas seran intercalados entre el jugador y el CPU.
 
