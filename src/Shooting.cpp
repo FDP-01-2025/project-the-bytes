@@ -25,9 +25,9 @@ Shooting::Shooting(int a, int b, string c)
     y = b;
     Cord = c;
 }
-Shooting::~Shooting() {}
 
-void Shooting::Input_Coord()
+
+void Shooting::startCoord()
 {
     bool correct_cord;
 
@@ -61,7 +61,7 @@ void Shooting::Input_Coord()
         }
     } while (!(correct_cord));
 }
-void Shooting::Draw_Shooting()
+void Shooting::drawshoot()
 {
     cout << "                   Player                         Computer\n            0 1 2 3 4 5 6 7 8 9             0 1 2 3 4 5 6 7 8 9\n";
     char letter = 'A';
@@ -95,7 +95,7 @@ void Shooting::Draw_Shooting()
         cout << endl;
     }
 }
-void Shooting::Update_Player_Grid()
+void Shooting::updateBoardplayer()
 {
 
     srand((unsigned int)time(NULL)); // random time to generate random number EVERYTIME
@@ -310,14 +310,9 @@ void Shooting::Update_Player_Grid()
         }
     }
     cout << "   --------------------\n   Computer shoots: " << char(x + 64) << y - 1 << endl;
-    /*
-    cout << "PATAIKYTA: " << x << " " << y << endl;
-    for (auto i : positions) {
-        cout << i << " ";
-    }
-    cout << endl;*/
+   
 }
-void Shooting::Update_Computer_Grid()
+void Shooting::updateBoardCPU()
 {
     while (true)
     {
@@ -334,6 +329,6 @@ void Shooting::Update_Computer_Grid()
             break;
         }
         else
-            Input_Coord();
+            startCoord();
     }
 }

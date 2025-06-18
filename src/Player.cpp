@@ -67,10 +67,10 @@ void Player::startingCoords()
                 }
             }
 
-            if (!(isdigit(Coordenate[1]))) // We check if second char digited is a number
-            {
-                trueCord = false; // It gonna be false if symbol isn't a number
-            }
+            if (!(isdigit(Coordenate[1])))
+            { // We check if second char digited is a number
+                trueCord = false;
+            } // It gonna be false if symbol isn't a number
         }
 
     } while (!(trueCord));
@@ -83,8 +83,10 @@ void Player::startirgPos()
         cin >> playerPos;
 
         if ((playerPos == 'V') || (playerPos == 'H'))
+        {
             break;
-
+        }
+    
     } while (true);
 }
 void Player::updatedCoords(int i)

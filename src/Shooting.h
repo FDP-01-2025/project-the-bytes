@@ -16,12 +16,12 @@ private:
 public:
 	Shooting();
 	Shooting(int a, int b, string c);
-	~Shooting();
 
-	void Input_Coord();
-	void Draw_Shooting();
-	void Update_Computer_Grid();
-	void Update_Player_Grid();
+
+	void startCoord();
+	void drawshoot();
+	void updateBoardCPU();
+	void updateBoardplayer();
 };
 
 #endif
