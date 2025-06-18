@@ -19,10 +19,10 @@ CPU::CPU()
 	switch (posicion)
 	{
 	case 0:
-		pos = 'Horizontal';
+		pos = 'H';
 		break;
 	case 1:
-		pos = 'Vertical';
+		pos = 'V';
 		break;
 	}
 }
@@ -55,10 +55,10 @@ void CPU::coordenateUpdate(int i)
 				switch (posicion) // Two cases, Horizontal or Vertical
 				{
 				case 0:
-					pos = 'Horizontal';
+					pos = 'H';
 					break;
 				case 1:
-					pos = 'Vertical';
+					pos = 'V';
 					break;
 				}
 			}
@@ -69,7 +69,7 @@ void CPU::coordenateUpdate(int i)
 	{
 		while (true) // It gonna stop if it's ok to put ships into de gameboard
 		{
-			if (pos == 'Vertical') // It is for the vertical position
+			if (pos == 'V') // It is for the vertical position
 			{
 				if (i == 1) // Size of the ship (one) box
 				{
@@ -138,7 +138,7 @@ void CPU::coordenateUpdate(int i)
 					}
 				}
 			}
-			else if (pos == 'Horizontal') // It is for the vertical position
+			else if (pos == 'V') // It is for the vertical position
 			{
 				if (i == 1) // Size of the ship (one) box
 				{
@@ -231,7 +231,7 @@ void CPU::coordenateUpdate(int i)
 			}
 		}
 	}
-	for (int p = 0; p < 4; p++) // the value of all the boxes surrounding (x, y) from 0 to 2.
+	for (int p = 0; p < 4; p++) // This is the area around the ship of the CPU
 	{
 
 		if (gameBoard[coordenateX + 1][coordenateY] == 0)
