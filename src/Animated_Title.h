@@ -4,4 +4,4 @@
 // Declaración de la función que imprime el título animado
 void showAnimatedTitle();
 
-#endif __ANIMATED_TITEL_H__
+#endif 

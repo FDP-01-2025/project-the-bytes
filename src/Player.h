@@ -5,9 +5,9 @@
 
 using namespace std;
 
-const int Rows = 12;    // The rows that has the board
-const int Columns = 12; // The columns that has the board
-extern int playerBoard[Rows + 1][Columns + 1];
+const int rowsPlayer = 12;    // The rows that has the board
+const int columnsPlayer = 12; // The columns that has the board
+extern int playerBoard[rowsPlayer+ 1][columnsPlayer + 1];
 
 class Player
 {
@@ -28,4 +28,4 @@ public:
     // We declare functions to use later into the cpp document.
 };
 
-#endif // !__Player__
+#endif // 

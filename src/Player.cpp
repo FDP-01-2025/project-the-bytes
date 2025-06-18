@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int Board[Rows + 1][Columns + 1] = {0};
+int playerBoard[rowsPlayer + 1][columnsPlayer + 1] = {0};
 
 Player::Player()
 {
@@ -26,10 +26,10 @@ void Player::Drawboard()
     cout << "                   Player\n            0 1 2 3 4 5 6 7 8 9\n";
     char letter = 'A';
 
-    for (int i = 1; i < Rows - 1; i++)
+    for (int i = 1; i < rowsPlayer - 1; i++)
     {
         cout << "          " << letter++ << " ";
-        for (int j = 1; j < Columns - 1; j++)
+        for (int j = 1; j < columnsPlayer - 1; j++)
         {
 
             if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2) // We use 0 to free cords, then we use 2 to ship sides

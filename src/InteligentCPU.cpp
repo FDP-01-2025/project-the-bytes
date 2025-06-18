@@ -1,4 +1,4 @@
-#include "InteligenCPU.h"
+#include "InteligentCPU.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -6,12 +6,12 @@
 
 using namespace std;
 
-int gameBoard[Rows + 1][Columns + 1] = {0};
+int boardCPU[rowsCPU + 1][columnsCPU + 1] = {0};
 
 CPU::CPU()
 {
 	srand((unsigned int)time(NULL)); // To generate a random number
-	pos = ' ';
+	posCPU = ' ';
 	coordenateX = 1 + (rand() % 10); // To randomize the position in X
 	coordenateY = 1 + (rand() % 10); // To randomize the coordenate in Y
 	posicion = rand() % 2;			 // To randomize the coordenate of the positions
@@ -19,10 +19,10 @@ CPU::CPU()
 	switch (posicion)
 	{
 	case 0:
-		pos = 'H';
+		posCPU = 'H';
 		break;
 	case 1:
-		pos = 'V';
+		posCPU = 'V';
 		break;
 	}
 }
@@ -33,11 +33,11 @@ void CPU::coordenateUpdate(int i)
 
 	while (true)
 	{
-		if (gameBoard[coordenateX][coordenateY] == 0) // We check if the coordinate is free
+		if (boardCPU[coordenateX][coordenateY] == 0) // We check if the coordinate is free
 		{
 			if (i > 6)
 			{
-				gameBoard[coordenateX][coordenateY] = 1; // Puts ships with size 1x1
+				boardCPU[coordenateX][coordenateY] = 1; // Puts ships with size 1x1
 				break;
 			}
 		}
@@ -55,10 +55,10 @@ void CPU::coordenateUpdate(int i)
 				switch (posicion) // Two cases, Horizontal or Vertical
 				{
 				case 0:
-					pos = 'H';
+					posCPU = 'H';
 					break;
 				case 1:
-					pos = 'V';
+					posCPU = 'V';
 					break;
 				}
 			}
@@ -69,18 +69,18 @@ void CPU::coordenateUpdate(int i)
 	{
 		while (true) // It gonna stop if it's ok to put ships into de gameboard
 		{
-			if (pos == 'V') // It is for the vertical position
+			if (posCPU == 'V') // It is for the vertical position
 			{
 				if (i == 1) // Size of the ship (one) box
 				{
 					if (coordenateX < 8) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX + 1][coordenateY] == 0 && gameBoard[coordenateX + 2][coordenateY] == 0 && gameBoard[coordenateX + 3][coordenateY] == 0)
+						if (boardCPU[coordenateX + 1][coordenateY] == 0 && boardCPU[coordenateX + 2][coordenateY] == 0 && boardCPU[coordenateX + 3][coordenateY] == 0)
 						{
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX + 1][coordenateY] = 1;
-							gameBoard[coordenateX + 2][coordenateY] = 1;
-							gameBoard[coordenateX + 3][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX + 1][coordenateY] = 1;
+							boardCPU[coordenateX + 2][coordenateY] = 1;
+							boardCPU[coordenateX + 3][coordenateY] = 1;
 							break;
 							// Checking if four long ship coordinates are free for ship
 						}
@@ -98,11 +98,11 @@ void CPU::coordenateUpdate(int i)
 				{
 					if (coordenateX < 9) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX + 1][coordenateY] == 0 && gameBoard[coordenateX + 2][coordenateY] == 0)
+						if (boardCPU[coordenateX + 1][coordenateY] == 0 && boardCPU[coordenateX + 2][coordenateY] == 0)
 						{
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX + 1][coordenateY] = 1;
-							gameBoard[coordenateX + 2][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX + 1][coordenateY] = 1;
+							boardCPU[coordenateX + 2][coordenateY] = 1;
 							break;
 							// Checking if three long ship coordinates are free for ship
 						}
@@ -120,10 +120,10 @@ void CPU::coordenateUpdate(int i)
 				{
 					if (coordenateX < 10) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX + 1][coordenateY] == 0)
+						if (boardCPU[coordenateX + 1][coordenateY] == 0)
 						{
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX + 1][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX + 1][coordenateY] = 1;
 							break;
 							// Checking if two long ship coordinates are free for ship
 						}
@@ -138,18 +138,18 @@ void CPU::coordenateUpdate(int i)
 					}
 				}
 			}
-			else if (pos == 'V') // It is for the vertical position
+			else if (posCPU == 'V') // It is for the vertical position
 			{
 				if (i == 1) // Size of the ship (one) box
 				{
 					if (coordenateY < 8) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX][coordenateY + 1] == 0 && gameBoard[coordenateX][coordenateY + 2] == 0 && gameBoard[coordenateX][coordenateY + 3] == 0)
+						if (boardCPU[coordenateX][coordenateY + 1] == 0 && boardCPU[coordenateX][coordenateY + 2] == 0 && boardCPU[coordenateX][coordenateY + 3] == 0)
 						{ // Checking if four long ship coordinates are free for ship
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX][coordenateY + 1] = 1;
-							gameBoard[coordenateX][coordenateY + 2] = 1;
-							gameBoard[coordenateX][coordenateY + 3] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY + 1] = 1;
+							boardCPU[coordenateX][coordenateY + 2] = 1;
+							boardCPU[coordenateX][coordenateY + 3] = 1;
 							break;
 							// Checking if four long ship coordinates are free for ship
 						}
@@ -167,11 +167,11 @@ void CPU::coordenateUpdate(int i)
 				{
 					if (coordenateY < 9) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX][coordenateY + 1] == 0 && gameBoard[coordenateX][coordenateY + 2] == 0)
+						if (boardCPU[coordenateX][coordenateY + 1] == 0 && boardCPU[coordenateX][coordenateY + 2] == 0)
 						{
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX][coordenateY + 1] = 1;
-							gameBoard[coordenateX][coordenateY + 2] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY + 1] = 1;
+							boardCPU[coordenateX][coordenateY + 2] = 1;
 							break;
 							// Checking if three long ship coordinates are free for ship
 						}
@@ -189,10 +189,10 @@ void CPU::coordenateUpdate(int i)
 				{
 					if (coordenateY < 10) // The ship must never leave the limits
 					{
-						if (gameBoard[coordenateX][coordenateY + 1] == 0)
+						if (boardCPU[coordenateX][coordenateY + 1] == 0)
 						{
-							gameBoard[coordenateX][coordenateY] = 1;
-							gameBoard[coordenateX][coordenateY + 1] = 1;
+							boardCPU[coordenateX][coordenateY] = 1;
+							boardCPU[coordenateX][coordenateY + 1] = 1;
 							break;
 							// Checking if two long ship coordinates are free for ship
 						}
@@ -221,10 +221,10 @@ void CPU::coordenateUpdate(int i)
 					switch (posicion) // Two options, posicion Horizontal or posicion Vertical
 					{
 					case 0:
-						pos = 'Horizontal';
+						posCPU = 'H';
 						break;
 					case 1:
-						pos = 'Vertical';
+						posCPU = 'V';
 						break;
 					}
 				}
@@ -234,43 +234,43 @@ void CPU::coordenateUpdate(int i)
 	for (int p = 0; p < 4; p++) // This is the area around the ship of the CPU
 	{
 
-		if (gameBoard[coordenateX + 1][coordenateY] == 0)
+		if (boardCPU[coordenateX + 1][coordenateY] == 0)
 		{
-			gameBoard[coordenateX + 1][coordenateY] = 2;
+			boardCPU[coordenateX + 1][coordenateY] = 2;
 		}
-		if (gameBoard[coordenateX][coordenateY + 1] == 0)
+		if (boardCPU[coordenateX][coordenateY + 1] == 0)
 		{
-			gameBoard[coordenateX][coordenateY + 1] = 2;
+			boardCPU[coordenateX][coordenateY + 1] = 2;
 		}
-		if (gameBoard[coordenateX - 1][coordenateY] == 0)
+		if (boardCPU[coordenateX - 1][coordenateY] == 0)
 		{
-			gameBoard[coordenateX - 1][coordenateY] = 2;
+			boardCPU[coordenateX - 1][coordenateY] = 2;
 		}
-		if (gameBoard[coordenateX][coordenateY - 1] == 0)
+		if (boardCPU[coordenateX][coordenateY - 1] == 0)
 		{
-			gameBoard[coordenateX][coordenateY - 1] = 2;
+			boardCPU[coordenateX][coordenateY - 1] = 2;
 		}
-		if (gameBoard[coordenateX + 1][coordenateY + 1] == 0)
+		if (boardCPU[coordenateX + 1][coordenateY + 1] == 0)
 		{
-			gameBoard[coordenateX + 1][coordenateY + 1] = 2;
+			boardCPU[coordenateX + 1][coordenateY + 1] = 2;
 		}
-		if (gameBoard[coordenateX - 1][coordenateY - 1] == 0)
+		if (boardCPU[coordenateX - 1][coordenateY - 1] == 0)
 		{
-			gameBoard[coordenateX - 1][coordenateY - 1] = 2;
+			boardCPU[coordenateX - 1][coordenateY - 1] = 2;
 		}
-		if (gameBoard[coordenateX + 1][coordenateY - 1] == 0)
+		if (boardCPU[coordenateX + 1][coordenateY - 1] == 0)
 		{
-			gameBoard[coordenateX + 1][coordenateY - 1] = 2;
+			boardCPU[coordenateX + 1][coordenateY - 1] = 2;
 		}
-		if (gameBoard[coordenateX - 1][coordenateY + 1] == 0)
+		if (boardCPU[coordenateX - 1][coordenateY + 1] == 0)
 		{
-			gameBoard[coordenateX - 1][coordenateY + 1] = 2;
+			boardCPU[coordenateX - 1][coordenateY + 1] = 2;
 		}
-		if (gameBoard[coordenateX + 1][coordenateY] == 1)
+		if (boardCPU[coordenateX + 1][coordenateY] == 1)
 		{
 			coordenateX++;
 		}
-		if (gameBoard[coordenateX][coordenateY + 1] == 1)
+		if (boardCPU[coordenateX][coordenateY + 1] == 1)
 		{
 			coordenateY++;
 		}

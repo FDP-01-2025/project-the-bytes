@@ -3,16 +3,16 @@
 
 using namespace std;
 
-const int Rows = 12;
-const int Columns = 12;
-extern int gameBoard[Rows + 1][Columns + 1]; // Se usara para el tablero mas adelante
+const int rowsCPU = 12;
+const int columnsCPU = 12;
+extern int boardCPU[rowsCPU + 1][columnsCPU + 1]; // Se usara para el tablero mas adelante
 
 class CPU
 {
 private:
 	int posicion;
 	int coordenateX, coordenateY;
-	char pos;
+	char posCPU;
 	// There are variables that we use into the cpp document
 
 public:
@@ -22,4 +22,4 @@ public:
 	// We declare functions to use later into the cpp document
 };
 
-#endif // __InteligentCPU__
+#endif 
