@@ -1,7 +1,7 @@
-#ifndef __ANIMATED_TITLE_H__
-#define __ANIMATED_TITLE_H__
+#ifndef ANIMATED_TITLE_H
+#define ANIMATED_TITLE_H
 
-// Declaración de la función que imprime el título animado
+// We declare the function to print the animated title
 void showAnimatedTitle();
 
-#endif 
+#endif

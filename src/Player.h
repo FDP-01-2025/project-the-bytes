@@ -5,27 +5,24 @@
 
 using namespace std;
 
-const int rowsPlayer = 12;    // The rows that has the board
-const int columnsPlayer = 12; // The columns that has the board
-extern int playerBoard[rowsPlayer+ 1][columnsPlayer + 1];
+const int playerRows = 12;
+const int playerColumns = 12;
+extern int playerBoard[playerRows + 1][playerColumns + 1];
 
-class Player
-{
+class Player {
 private:
-    int CoordsX, CoordsY;
-    string Coordenate;
-    char playerPos;
-    // There are variables that use in the cpp document
-
+	int Coordx, Coordy;
+	string Coordenate;
+	char position;
 public:
-    Player();
-    Player(int coordA, int coordB, string coordsC, char positionD);
+	Player();
+	Player(int a, int b, string c, char d);
+	
 
-    void Drawboard();          // Function to draw the player board.
-    void startingCoords();     // Function to write the coords into the game.
-    void startirgPos();        // Function to get the orientation of the ship.
-    void updatedCoords(int i); // Function to put the ship into the board.
-    // We declare functions to use later into the cpp document.
+	void drawBoard();
+	void startingCoords();
+	void startingPosition();
+	void newCordsplayer(int i);
 };
 
-#endif // 
+#endif 

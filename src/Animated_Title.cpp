@@ -16,7 +16,7 @@ int getconsoleheight() // This is a function to get the height of the console
 
 void showAnimatedTitle() // Function to display the title with vertical animation
 {
-    string title = R"(
+    string titulo = R"(
 
   ____        _   _   _           _____ _     _       
  |  _ \      | | | | | |         / ____| |   (_)      
@@ -29,14 +29,14 @@ void showAnimatedTitle() // Function to display the title with vertical animatio
 )";
 
     int consoleHeight = getconsoleheight();
-    int titleLines = 9; // Number of the lines that have the title
+    int titleLines = 9; // Number of the lines that has the title
     int spaceAbove = (consoleHeight - titleLines) / 2;
 
     for (int i = 0; i < spaceAbove; ++i)
     {
         cout << endl;
-        Sleep(3000 / spaceAbove); // Efect to animated for 3 seconds
+        Sleep(3000 / spaceAbove); // Animated efect of three seconds
     }
 
-    cout << title;
+    cout << titulo;
 }
