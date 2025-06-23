@@ -7,6 +7,8 @@
 #include "Shooting.h"
 #include "Animated_Title.h"
 #include "Menu.h"
+#include "ScoreManager.h" 
+
 
 using namespace std;
 
@@ -57,10 +59,14 @@ int main()
     C[i].Update_Computer_Grid();
     C[i].Update_Player_Grid();
 
-    if (Count_Computer == 20)
+    bool playerWon = Count_Player == 20;
+    if (playerWon)
         cout << "\n   Computer WON!";
+      
     else
         cout << "\n   Player Won!";
+        
+        updateScore(playerWon); // Actualizar el registro de puntuaciones
 
     cout << endl;
     system("pause");
