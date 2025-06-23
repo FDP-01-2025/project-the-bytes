@@ -6,7 +6,7 @@ using namespace std;
 int getconsoleheight() // This is a function to get the height of the console
 {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    int rows = 25; // Default value
+    int rows = 15; // Default value
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
     {
         rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1; // The size of the console modified
@@ -29,13 +29,13 @@ void showAnimatedTitle() // Function to display the title with vertical animatio
 )";
 
     int consoleHeight = getconsoleheight();
-    int titleLines = 9; // Number of the lines that has the title
+    int titleLines = 7; // Number of the lines that has the title
     int spaceAbove = (consoleHeight - titleLines) / 2;
 
     for (int i = 0; i < spaceAbove; ++i)
     {
         cout << endl;
-        Sleep(3000 / spaceAbove); // Animated efect of three seconds
+        Sleep(1500 / spaceAbove); // Animated efect of 1.5 seconds
     }
 
     cout << titulo;

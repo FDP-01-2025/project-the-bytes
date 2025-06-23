@@ -1,5 +1,5 @@
-#ifndef SHOOTING1_H
-#define SHOOTING1_H
+#ifndef SHOOTING_H
+#define SHOOTING_H
 
 #include <string>
 using namespace std;
@@ -8,26 +8,25 @@ class Shooting
 {
 private:
     int shootX;
-    int y;
-    std::string Cord;
+    int shootY;
+    string Cord;
 
 public:
     Shooting();
     Shooting(int a, int b, string c);
 
-    void Input_Coord();          // Coordenadas del jugador
-    void Draw_Shooting();        // Muestra tableros en pantalla
-    void Update_Player_Grid();   // Turno de disparo de la computadora
-    void Update_Computer_Grid(); // Turno de disparo del jugador
+    void Input_Coord();          // Coords of the player
+    void Draw_Shooting();        // Shows boards in the screen
+    void Update_Player_Grid();   // Computer's shooting turn
+    void Update_Computer_Grid(); // Player's shooting turn
 };
 
-// Variables globales para smart shooting sin vector
-extern int positions[100][2]; // Arreglo de coordenadas
-extern int posCount;          // Cantidad de elementos en 'positions'
-extern int Count_Computer;
-extern int Count_Player;
+extern int positions[100][2]; // Arrays of coords
+extern int posCount;          // Quantity of elements in "position"
+extern int Count_Computer;    // Computer's point counter
+extern int Count_Player;      // Player's point counter
 
-// Funciones auxiliares de manejo de posiciones
+// These are position management functions
 void PushPosition(int x, int y);
 bool PopPosition(int &x, int &y);
 

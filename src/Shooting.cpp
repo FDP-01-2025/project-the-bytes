@@ -10,11 +10,10 @@ using namespace std;
 int Count_Player = 0;
 int Count_Computer = 0;
 
-int positions[100][2]; // 
-int posCount = 0;      // número de elementos en positions
+int positions[100][2]; // Size of the array
+int posCount = 0;      // Number of elements in position
 
-// Funciones auxiliares
-void PushPosition(int x, int y)
+void PushPosition(int x, int y) // There are auxiliary functions
 {
     if (posCount < 100)
     {
@@ -27,12 +26,12 @@ Shooting::Shooting()
 {
     Cord = "";
     shootX = 0;
-    y = 0;
+    shootY = 0;
 }
 Shooting::Shooting(int a, int b, string c)
 {
     shootX = a;
-    y = b;
+    shootY = b;
     Cord = c;
 }
 void Shooting::Input_Coord()
@@ -44,9 +43,9 @@ void Shooting::Input_Coord()
         cout << "   Input a coordinates X & Y to shoot (Ex.: A5): ";
         cin >> Cord;
 
-        // Assci Table
+        // Table with Assci
         shootX = Cord[0] - 64; // Char Letter to our needed number
-        y = Cord[1] - 47;      // Char number to our needed number
+        shootY = Cord[1] - 47; // Char number to our needed number
 
         // Checking if input is correct
         correct_cord = false;
@@ -55,16 +54,16 @@ void Shooting::Input_Coord()
         { // Correct number of symbols - 2
             for (char i = 'A'; i <= 'J'; i++)
             {
-                if (Cord[0] == i)
-                { // Checking if FIRST entered symbol is equal to a letter coordinate
+                if (Cord[0] == i) // We checking if the first coord is equal to a letter of the coordenate
+                {
                     correct_cord = true;
                     break;
                 }
             }
 
-            if (!(isdigit(Cord[1])))
-            {                         // Checking if SECOND entered symbol is a digit
-                correct_cord = false; // It will be false if symbol isn't a digit
+            if (!(isdigit(Cord[1]))) // We check if the second coord is equal to a digit of the coordenate
+            {
+                correct_cord = false; // It gonna be false if symbol isn't a digit
             }
         }
     } while (!(correct_cord));
@@ -80,24 +79,24 @@ void Shooting::Draw_Shooting()
         cout << "          " << letter << " ";
         for (int j = 1; j < playerColumns - 1; j++)
         {
-            if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2) // 0 for free Coordinate; 2 for Ship sides
+            if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2) // 0 for free coordinate and 2 for ship place
                 cout << ". ";
-            else if (playerBoard[i][j] == 3)
+            else if (playerBoard[i][j] == 3) // 3 if the shoot impact in a ship
                 cout << "X ";
-            else if (playerBoard[i][j] == 4)
+            else if (playerBoard[i][j] == 4) // 4 if the shoot not impact in a ship
                 cout << "* ";
-            else if (playerBoard[i][j] == 1) // 1 for SHIP
+            else if (playerBoard[i][j] == 1) // 1 if exist a ship
                 cout << "0 ";
         }
         // COMPUTER
         cout << "          " << letter++ << " ";
         for (int j = 1; j < playerColumns - 1; j++)
         {
-            if (computerBoard[i][j] == 2 || computerBoard[i][j] == 1 || computerBoard[i][j] == 0) // 0 - EMPTY PLACE; 1 - SHIP; 2 - SHIP SIDES;
+            if (computerBoard[i][j] == 2 || computerBoard[i][j] == 1 || computerBoard[i][j] == 0) // 0 if the space is void. 1 if exist a ship. 2 for the sides ship;
                 cout << ". ";
-            else if (computerBoard[i][j] == 3) // HITTED SHIP
+            else if (computerBoard[i][j] == 3) // This gonna pass if the shoot impact with any ship
                 cout << "X ";
-            else if (computerBoard[i][j] == 4) // UNHITTED SHIP
+            else if (computerBoard[i][j] == 4) // This gonna pass if the shoot not impact in any ship
                 cout << "* ";
         }
         cout << endl;
@@ -107,16 +106,16 @@ void Shooting::Update_Computer_Grid()
 {
     while (true)
     {
-        if (computerBoard[shootX][y] != 3 && computerBoard[shootX][y] != 4)
+        if (computerBoard[shootX][shootY] != 3 && computerBoard[shootX][shootY] != 4)
         {
-            if (computerBoard[shootX][y] == 1)
+            if (computerBoard[shootX][shootY] == 1)
             {
-                computerBoard[shootX][y] = 3; // 3 if hit
+                computerBoard[shootX][shootY] = 3; // 3 if player hit in any ship
                 cout << "   Player HIT!\n";
                 Count_Player++;
             }
-            else if (computerBoard[shootX][y] == 2 || computerBoard[shootX][y] == 0)
-                computerBoard[shootX][y] = 4; // 4 if missed
+            else if (computerBoard[shootX][shootY] == 2 || computerBoard[shootX][shootY] == 0)
+                computerBoard[shootX][shootY] = 4; // 4 if player miss the shoot
             break;
         }
         else
@@ -139,50 +138,46 @@ bool PopPosition(int &x, int &y)
     return true;
 }
 
-// ... tus constructores y métodos Input_Coord, Draw_Shooting se mantienen igual ...
-
-// Reemplaza en Update_Player_Grid:
 void Shooting::Update_Player_Grid()
 {
-    srand((unsigned int)time(NULL)); // semilla aleatoria
-    if (!PopPosition(shootX, y))
+    srand((unsigned int)time(NULL)); // This is to randomize the position
+    if (!PopPosition(shootX, shootY))
     {
         shootX = 1 + (rand() % 10);
-        y = 1 + (rand() % 10);
+        shootY = 1 + (rand() % 10);
     }
 
     while (true)
     {
-        if (playerBoard[shootX][y] != 3 && playerBoard[shootX][y] != 4)
+        if (playerBoard[shootX][shootY] != 3 && playerBoard[shootX][shootY] != 4)
         {
-            if (playerBoard[shootX][y] == 1)
+            if (playerBoard[shootX][shootY] == 1)
             {
-                playerBoard[shootX][y] = 3;
+                playerBoard[shootX][shootY] = 3;
                 cout << "   CPU HIT!\n";
                 Count_Computer++;
 
-                // Smart shooting (simplificado para ejemplo)
                 if (posCount == 0)
                 {
-                    if (y - 1 >= 1 && (playerBoard[shootX][y - 1] == 2 || playerBoard[shootX][y - 1] == 0 || playerBoard[shootX][y - 1] == 1))
-                        PushPosition(shootX, y - 1);
-                    if (y + 1 <= 10 && (playerBoard[shootX][y + 1] == 2 || playerBoard[shootX][y + 1] == 0 || playerBoard[shootX][y + 1] == 1))
-                        PushPosition(shootX, y + 1);
-                    if (shootX - 1 >= 1 && (playerBoard[shootX - 1][y] == 2 || playerBoard[shootX - 1][y] == 0 || playerBoard[shootX - 1][y] == 1))
-                        PushPosition(shootX - 1, y);
-                    if (shootX + 1 <= 9 && (playerBoard[shootX + 1][y] == 2 || playerBoard[shootX + 1][y] == 0 || playerBoard[shootX + 1][y] == 1))
-                        PushPosition(shootX + 1, y);
+                    if (shootY - 1 >= 1 && (playerBoard[shootX][shootY - 1] == 2 || playerBoard[shootX][shootY - 1] == 0 || playerBoard[shootX][shootY - 1] == 1))
+                        PushPosition(shootX, shootY - 1);
+                    if (shootY + 1 <= 10 && (playerBoard[shootX][shootY + 1] == 2 || playerBoard[shootX][shootY + 1] == 0 || playerBoard[shootX][shootY + 1] == 1))
+                        PushPosition(shootX, shootY + 1);
+                    if (shootX - 1 >= 1 && (playerBoard[shootX - 1][shootY] == 2 || playerBoard[shootX - 1][shootY] == 0 || playerBoard[shootX - 1][shootY] == 1))
+                        PushPosition(shootX - 1, shootY);
+                    if (shootX + 1 <= 9 && (playerBoard[shootX + 1][shootY] == 2 || playerBoard[shootX + 1][shootY] == 0 || playerBoard[shootX + 1][shootY] == 1))
+                        PushPosition(shootX + 1, shootY);
                 }
             }
-            else if (playerBoard[shootX][y] == 2 || playerBoard[shootX][y] == 0)
-                playerBoard[shootX][y] = 4;
+            else if (playerBoard[shootX][shootY] == 2 || playerBoard[shootX][shootY] == 0)
+                playerBoard[shootX][shootY] = 4;
             break;
         }
         else
         {
             shootX = 1 + (rand() % 10);
-            y = 1 + (rand() % 10);
+            shootY = 1 + (rand() % 10);
         }
     }
-    cout << "   --------------------\n   Computer shoots: " << char(shootX + 64) << y - 1 << endl;
+    cout << "   --------------------\n   Computer shoots: " << char(shootX + 64) << shootY - 1 << endl;
 }
