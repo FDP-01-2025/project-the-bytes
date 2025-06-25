@@ -11,10 +11,11 @@ extern int playerBoard[playerRows + 1][playerColumns + 1];
 extern int Coordx, Coordy;
 extern string Coordenate;
 extern char position;
+ // There are variables that use in the cpp document
 
-void drawBoard();
-void startingCoords();
-void startingPosition();
-void newCordsplayer(int i);
+void drawBoard(); // Function to draw the player board.
+void startingCoords(); // Function to write the coords into the game.
+void startingPosition(); // Function to get the orientation of the ship.
+void newCordsplayer(int i); // Function to put the ship into the board.
 
 #endif

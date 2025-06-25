@@ -160,7 +160,7 @@ void updatedComputerCords(int i)
         }
     }
 
-    for (int p = 0; p < 4; p++)
+    for (int p = 0; p < 4; p++) // Area around the ship
     {
         if (computerBoard[computerX + 1][computerY] == 0)
             computerBoard[computerX + 1][computerY] = 2;
