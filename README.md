@@ -1,40 +1,40 @@
-# NOMBRE DEL JUEGO: [BATTLE SHIP]
+# NOMBRE DEL JUEGO: BATTLE SHIP
 
-## Descripción del Proyecto
 
-Battleship es un juego enfocado en la estrategia y en la destruccion de embarcaciones enemigas, en Battleship te embarcaras en una aventura en contra de la Inteligent CPU, una maquina que esta entrenada para que logre adivinar las posibles ubicaciones de tus barcos, haciendo vivir este juego como una experiencia sin frenos, en donde ganara quien logre destruir todas las embarcaciones del rival. Crees que puedas derrotarla?
+#### Descripción del Proyecto
+
+Battleship es un juego enfocado en la estrategia y en la destruccion de embarcaciones enemigas, en Battleship te embarcaras en una aventura en contra de la Inteligent CPU, una maquina que esta entrenada para que logre adivinar las posibles ubicaciones de tus barcos, haciendo vivir este juego como una experiencia sin frenos, en donde ganara quien logre destruir todas las embarcaciones del rival. Crees que puedas derrotarla?. Si no te crees capaz puedes practicar contra un amigo con la opcion multijugador que tiene
+
+A todos los marineros se le daran esta cantidad de barcos:
+
+|      Leviatan        |     Destructores        |        Cruceros          |        Escoltas           |         
+|----------------------|-------------------------|--------------------------|---------------------------|
+|La flota mas grande   |Estas flotas solo tiene  |Las flotas que solo       |Seamos realistas, solo son |
+|que existe en el      |un objetivo. Distraerte  |transportan a los soldados|para distraer al rival.    |
+|mar. Es el jefe de    |y acabarte. Usan tres    |Estas utilizan solo dos   |Estas flotas solo utilizan |
+|jefes.Usa 4 casillas. |casillas en el tablero.  |casillas en el tablero    |una casilla en el tablero  |
 
 ## Jugabilidad de Battleship
+--------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------- 
+#### 1. Todos los jugadores tendran un tablero 10x10 en donde podran colocar sus barcos
 
-1. Tu y la Inteligent CPU tendran un tablero 10x10 en donde podran colocar sus barcos
-
-2. A ambos se le daran la siguiente cantidad de barcos:
+#### 2. A todos los jugadores se le daran la siguiente cantidad de barcos:
   
-|     Leviatan      |   Destructores    |      Cruceros     |      Escoltas     |         
-|-------------------|-------------------|-------------------|-------------------|
-|La maquina  y el   |La maquina y el    |La maquina y el    |La maquina y el    |
-|jugador cuentan con|jugador cuentan con|jugador cuentan con|jugador cuentan con|
-|un barco de cuatro |dos barcos de tres |tres barcos de dos |cuatro barcos de   |
-|espacios.          |espacios.          |espacios.          |un espacio.        |
+#### 3. Para disparar, se debera colocar primero la coordenada en Y y luego la coordenada en X, por ejemplo (C4), siendo C un punto dentro de la coordenada "Y" y 4 un punto dentro de la coordenada "X".
 
-3. Para disparar, se debera colocar primero la coordenada en Y y luego la coordenada en X, por ejemplo (A4), siendo A un punto dentro de la coordenada "Y" y 4 un punto dentro de la coordenada "X".
+#### 4. Para hacerlo mas emocionante, por cada impacto en un barco, sea rival o tuyo, se sumara 1 al contador de puntos. 
 
-4. Para hacerlo mas emocionante, por cada impacto en un barco, sea rival o tuyo, se sumara 1 al contador de puntos. 
+#### 5. Los turnos para disparar en unas coordenadas seran intercalados entre los jugadores.
 
+#### 6. Los jugadores marcan en su tablero de ataque los resultados para hacer seguimiento de sus intentos y aciertos.
 
-4. Los turnos para disparar en unas coordenadas seran intercalados entre el jugador y el CPU.
+#### 7. Gana el primer jugador que logre hundir toda la flota enemiga y en conseguir 20 puntos.
 
-## Modos de juego
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-4. Los jugadores marcan en su tablero de ataque los resultados para hacer seguimiento de sus intentos y aciertos.
-5. Gana el jugador que primero hunde toda la flota enemiga.
-
-
-Se utilizaran todas las mecanicas vistas durante el curso, las cuales las detallo mas a fondo:
+## IMPLEMENTACION DE LOS TEMAS VISTOS AL PROYECTO
 
 1. Se utilizara if, else y switch para todas las tomas de desiciones que deban existir dentro del videojuego.
 2. Se utilizara for, while y do while se utilizara para que se repitan mientras ciertas condiciones dadas se cumplan
