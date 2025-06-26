@@ -116,7 +116,7 @@ void newCordsplayer(int i)
 						break;
 						// We checking if four long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
 						repeat_input = true;
 				}
 				else if (i >= 2 && i < 4) // Size of the ship (two) box
@@ -136,6 +136,7 @@ void newCordsplayer(int i)
 				{
 					if (Coordx < 10 && playerBoard[Coordx + 1][Coordy] == 0) // The ship must never leave the limits
 					{
+						// Checking if 2 long ship coordinates are free for ship
 						playerBoard[Coordx][Coordy] = 1;
 						playerBoard[Coordx + 1][Coordy] = 1;
 						break;
@@ -152,7 +153,7 @@ void newCordsplayer(int i)
 					// The ship must never leave the limits
 					if (Coordy < 8 && playerBoard[Coordx][Coordy + 1] == 0 && playerBoard[Coordx][Coordy + 2] == 0 && playerBoard[Coordx][Coordy + 3] == 0)
 					{
-
+						// Checking if 4 long ship coordinates are free for ship
 						playerBoard[Coordx][Coordy] = 1;
 						playerBoard[Coordx][Coordy + 1] = 1;
 						playerBoard[Coordx][Coordy + 2] = 1;
@@ -168,6 +169,7 @@ void newCordsplayer(int i)
 					if (Coordy < 9 && playerBoard[Coordx][Coordy + 1] == 0 && playerBoard[Coordx][Coordy + 2] == 0)
 					{
 						// The ship must never leave the limits
+						
 						playerBoard[Coordx][Coordy] = 1;
 						playerBoard[Coordx][Coordy + 1] = 1;
 						playerBoard[Coordx][Coordy + 2] = 1;
@@ -199,7 +201,7 @@ void newCordsplayer(int i)
 			}
 		}
 
-	for (int p = 0; p < 4; p++) //Area of the ship
+	for (int p = 0; p < 4; p++) // Area of the ship
 	{
 		if (playerBoard[Coordx + 1][Coordy] == 0)
 			playerBoard[Coordx + 1][Coordy] = 2;

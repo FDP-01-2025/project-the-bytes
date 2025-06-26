@@ -12,9 +12,9 @@ extern int Coordx2, Coordy2;
 extern string Coordenate2;
 extern char position2;
 
-void drawBoard2();
-void startingCoords2();
-void startingPosition2();
-void newCordsplayer2(int i);
+void drawBoard2(); // Draw player 2's board on the console, with letters (A-J) and numbers (0-9).
+void startingCoords2(); // Function to write the coords into the game.
+void startingPosition2(); // Function to get the orientation of the ship.
+void newCordsplayer2(int i); // Function to put the ship into the board.
 
 #endif

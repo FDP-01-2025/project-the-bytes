@@ -102,34 +102,39 @@ void newCordsplayer2(int i)
     if (i < 7) // It gonna stop if it's okay to put ships in any position
         while (true)
         {
-            if (position2 == 'V' || position2 == 'v')
+            if (position2 == 'V' || position2 == 'v') // This is only for vertical position
             {
-                if (i == 1)
+                if (i == 1) // Size of the ship (one) box
                 {
+                    // The ship must never leave the limits
                     if (Coordx2 < 8 && player2Board[Coordx2 + 1][Coordy2] == 0 && player2Board[Coordx2 + 2][Coordy2] == 0 && player2Board[Coordx2 + 3][Coordy2] == 0)
                     {
+                        // Checking if 4 long ship coordinates are free for ship
                         player2Board[Coordx2][Coordy2] = 1;
                         player2Board[Coordx2 + 1][Coordy2] = 1;
                         player2Board[Coordx2 + 2][Coordy2] = 1;
                         player2Board[Coordx2 + 3][Coordy2] = 1;
                         break;
+                        // We checking if four long ship coordinates are free for ship
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
-                else if (i >= 2 && i < 4)
+                else if (i >= 2 && i < 4) // Size of the ship (two) box
                 {
+                    // The ship must never leave the limits
                     if (Coordx2 < 9 && player2Board[Coordx2 + 1][Coordy2] == 0 && player2Board[Coordx2 + 2][Coordy2] == 0)
                     {
+                        // Checking if 3 long ship coordinates are free for ship
                         player2Board[Coordx2][Coordy2] = 1;
                         player2Board[Coordx2 + 1][Coordy2] = 1;
                         player2Board[Coordx2 + 2][Coordy2] = 1;
                         break;
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
-                else if (i > 3 && i < 7)
+                else if (i > 3 && i < 7) // Size of the ship (three) box
                 {
                     if (Coordx2 < 10 && player2Board[Coordx2 + 1][Coordy2] == 0)
                     {
@@ -137,13 +142,13 @@ void newCordsplayer2(int i)
                         player2Board[Coordx2 + 1][Coordy2] = 1;
                         break;
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
             }
             else if (position2 == 'H' || position2 == 'h')
             {
-                if (i == 1)
+                if (i == 1) // Size of the ship (one) box
                 {
                     if (Coordy2 < 8 && player2Board[Coordx2][Coordy2 + 1] == 0 && player2Board[Coordx2][Coordy2 + 2] == 0 && player2Board[Coordx2][Coordy2 + 3] == 0)
                     {
@@ -152,11 +157,12 @@ void newCordsplayer2(int i)
                         player2Board[Coordx2][Coordy2 + 2] = 1;
                         player2Board[Coordx2][Coordy2 + 3] = 1;
                         break;
+                        // Checking if 4 long ship coordinates are free for ship
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
-                else if (i >= 2 && i < 4)
+                else if (i >= 2 && i < 4) // Size of the ship (two) box
                 {
                     if (Coordy2 < 9 && player2Board[Coordx2][Coordy2 + 1] == 0 && player2Board[Coordx2][Coordy2 + 2] == 0)
                     {
@@ -164,19 +170,21 @@ void newCordsplayer2(int i)
                         player2Board[Coordx2][Coordy2 + 1] = 1;
                         player2Board[Coordx2][Coordy2 + 2] = 1;
                         break;
+                        // Checking if 3 long ship coordinates are free for ship
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
-                else if (i > 3 && i < 7)
+                else if (i > 3 && i < 7) // Size of the ship (three) box
                 {
                     if (Coordy2 < 10 && player2Board[Coordx2][Coordy2 + 1] == 0)
                     {
                         player2Board[Coordx2][Coordy2] = 1;
                         player2Board[Coordx2][Coordy2 + 1] = 1;
                         break;
+                        // Checking if 2 long ship coordinates are free for ship
                     }
-                    else
+                    else // The ship exceeded the limits
                         repeat_input = true;
                 }
             }
@@ -185,7 +193,7 @@ void newCordsplayer2(int i)
             {
                 startingCoords2();
                 if (i < 7)
-                    startingPosition2();
+                    startingPosition2(); // Is mandatory do this until the last ship.
             }
         }
 
