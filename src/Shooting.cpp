@@ -3,17 +3,35 @@
 #include "CPU.h"
 #include <iostream>
 #include <string>
-#include <ctime> // time to randomize  the time
+#include <ctime>
 
 using namespace std;
 
-int Count_Player = 0;
-int Count_Computer = 0;
+int Count_Player = 0; //Count of points of  player
+int Count_Computer = 0; //Count of point of computer
 
 int positions[100][2]; // Size of the array
 int posCount = 0;      // Number of elements in position
 
-void PushPosition(int x, int y) // There are auxiliary functions
+int shootX = 0;
+int shootY = 0;
+string Cord = "";
+
+void Shooting()
+{
+    shootX = 0;
+    shootY = 0;
+    Cord = "";
+}
+
+void InitShooting(int a, int b, string c)
+{
+    shootX = a;
+    shootY = b;
+    Cord = c;
+}
+
+void PushPosition(int x, int y)
 {
     if (posCount < 100)
     {
@@ -22,60 +40,58 @@ void PushPosition(int x, int y) // There are auxiliary functions
         posCount++;
     }
 }
-Shooting::Shooting()
+
+bool PopPosition(int x, int y)
 {
-    Cord = "";
-    shootX = 0;
-    shootY = 0;
+    if (posCount == 0)
+        return false;
+    x = positions[0][0];
+    y = positions[0][1];
+    for (int i = 1; i < posCount; ++i)
+    {
+        positions[i - 1][0] = positions[i][0];
+        positions[i - 1][1] = positions[i][1];
+    }
+    posCount--;
+    return true;
 }
-Shooting::Shooting(int a, int b, string c)
-{
-    shootX = a;
-    shootY = b;
-    Cord = c;
-}
-void Shooting::Input_Coord()
+
+void Input_Coord()
 {
     bool correct_cord;
-
     do
     {
         cout << "   Input a coordinates X & Y to shoot (Ex.: A5): ";
         cin >> Cord;
 
-        // Table with Assci
         shootX = Cord[0] - 64; // Char Letter to our needed number
         shootY = Cord[1] - 47; // Char number to our needed number
 
-        // Checking if input is correct
-        correct_cord = false;
+        correct_cord = false; // Checking if input is correct
 
-        if (Cord.size() == 2)
-        { // Correct number of symbols - 2
-            for (char i = 'A'; i <= 'J'; i++)
+        if (Cord.size() == 2) // Correct number of symbols - 2
+        {
+            for (char i = 'A'; i <= 'J'; i++) // We checking if the first coord is equal to a letter of the coordenate
             {
-                if (Cord[0] == i) // We checking if the first coord is equal to a letter of the coordenate
+                if (Cord[0] == i)
                 {
                     correct_cord = true;
                     break;
                 }
             }
-
-            if (!(isdigit(Cord[1]))) // We check if the second coord is equal to a digit of the coordenate
-            {
+            if (!isdigit(Cord[1]))    // We check if the second coord is equal to a digit of the coordenate
                 correct_cord = false; // It gonna be false if symbol isn't a digit
-            }
         }
-    } while (!(correct_cord));
+    } while (!correct_cord);
 }
-void Shooting::Draw_Shooting()
+
+void Draw_Shooting()
 {
     cout << "                   Player                         Computer\n            0 1 2 3 4 5 6 7 8 9             0 1 2 3 4 5 6 7 8 9\n";
     char letter = 'A';
 
     for (int i = 1; i < playerRows - 1; i++)
     {
-        // PLAYER
         cout << "          " << letter << " ";
         for (int j = 1; j < playerColumns - 1; j++)
         {
@@ -88,7 +104,8 @@ void Shooting::Draw_Shooting()
             else if (playerBoard[i][j] == 1) // 1 if exist a ship
                 cout << "0 ";
         }
-        // COMPUTER
+
+        // APART OF COMPUTER
         cout << "          " << letter++ << " ";
         for (int j = 1; j < playerColumns - 1; j++)
         {
@@ -102,7 +119,8 @@ void Shooting::Draw_Shooting()
         cout << endl;
     }
 }
-void Shooting::Update_Computer_Grid()
+
+void Update_Computer_Grid()
 {
     while (true)
     {
@@ -119,26 +137,13 @@ void Shooting::Update_Computer_Grid()
             break;
         }
         else
+        {
             Input_Coord();
+        }
     }
 }
 
-bool PopPosition(int &x, int &y)
-{
-    if (posCount == 0)
-        return false;
-    x = positions[0][0];
-    y = positions[0][1];
-    for (int i = 1; i < posCount; ++i)
-    {
-        positions[i - 1][0] = positions[i][0];
-        positions[i - 1][1] = positions[i][1];
-    }
-    posCount--;
-    return true;
-}
-
-void Shooting::Update_Player_Grid()
+void Update_Player_Grid()
 {
     srand((unsigned int)time(NULL)); // This is to randomize the position
     if (!PopPosition(shootX, shootY))
@@ -153,7 +158,7 @@ void Shooting::Update_Player_Grid()
         {
             if (playerBoard[shootX][shootY] == 1)
             {
-                playerBoard[shootX][shootY] = 3;
+                playerBoard[shootX][shootY] = 3; // If the cpu hit the ship, print this
                 cout << "   CPU HIT!\n";
                 Count_Computer++;
 

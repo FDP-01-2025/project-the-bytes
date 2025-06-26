@@ -1,6 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Menu.h"
+#include "Player.h"
+#include "Player2.h"
+#include "CPU.h"
+#include "Shooting.h"
+#include "Shooting2.h"
 
 using namespace std;
 
@@ -11,7 +16,11 @@ void Menu()
 MENU:
     cout << "                          BATTLESHIP \n";
     cout << "         ---------------------------------------------\n";
-    cout << "                          1. Play\n                          2. Rules\n                          3. Credits\n                          4. Exit\n";
+    cout << "                        1. PLAYER VS CPU\n";
+    cout << "                        2. MULTIPLAYER\n";
+    cout << "                        3. RULES\n";
+    cout << "                        4. CREDITS\n";
+    cout << "                        5. EXIT\n";
     cout << "         ---------------------------------------------\n";
     cin >> opcion;
 
@@ -22,8 +31,124 @@ MENU:
         {
             system("cls");
             status = false;
+
+            initComputer();
+
+            for (int i = 0; i < 10; i++)
+            {
+                drawBoard();
+
+                startingCoords();
+                if (i < 6)
+                    startingPosition();
+
+                newCordsplayer(i + 1);
+                updatedComputerCords(i + 1);
+                system("cls");
+            }
+
+            int i = 0;
+            while (true)
+            {
+                Draw_Shooting();
+                Input_Coord();
+                Update_Computer_Grid();
+                Update_Player_Grid();
+                cout << "   Points Computer: " << Count_Computer << endl
+                     << "   Points Player: " << Count_Player << endl
+                     << "   --------------------\n";
+                system("PAUSE");
+                i++;
+                system("cls");
+                if (Count_Computer == 20 || Count_Player == 20)
+                    break;
+            }
+
+            Draw_Shooting();
+
+            Update_Computer_Grid();
+            Update_Player_Grid();
+
+            bool playerWon = Count_Player == 20;
+            if (playerWon)
+                cout << "\n   Computer WON!";
+            else
+                cout << "\n   Player Won!";
+
+            cout << endl;
+            system("pause");
         }
         else if (opcion == 2)
+        {
+            system("cls");
+            status = false;
+
+            // PLAYER 1
+            for (int i = 0; i < 10; i++)
+            {
+                drawBoard();
+
+                startingCoords();
+                if (i < 6)
+                    startingPosition();
+
+                newCordsplayer(i + 1);
+                system("CLS");
+            }
+
+            // PLAYER 2
+            for (int i = 0; i < 10; i++)
+            {
+                drawBoard2();
+
+                startingCoords2();
+                if (i < 6)
+                    startingPosition2();
+
+                newCordsplayer2(i + 1);
+                system("CLS");
+            }
+
+            int turn = 1;
+            while (true)
+            {
+                Draw_Shooting2();
+                if (turn % 2 != 0)
+                {
+                    cout << "\n   PLAYER 1 TURN\n";
+                    Input_Coord2(); // P1 dispara a P2
+                    Update_Player2_Grid();
+                }
+                else
+                {
+                    cout << "\n   PLAYER 2 TURN\n";
+                    Input_Coord();          // P2 dispara a P1
+                    Update_Computer_Grid(); // Aquí "Computer" representa el tablero de P1
+                }
+
+                cout << "   Points Player 1: " << Count_Player2 << endl;
+                cout << "   Points Player 2: " << Count_Player << endl;
+                cout << "   --------------------\n";
+                system("PAUSE");
+                system("CLS");
+
+                if (Count_Player2 == 20 || Count_Player == 20)
+                    break;
+
+                turn++;
+            }
+
+            Draw_Shooting2();
+
+            if (Count_Player2 == 20)
+                cout << "\n   Player 1 Wins!";
+            else
+                cout << "\n   Player 2 Wins!";
+
+            cout << endl;
+            system("pause");
+        }
+        else if (opcion == 3)
         {
             system("cls");
             cout << "                           BATTLESHIP \n";
@@ -31,25 +156,24 @@ MENU:
             cout << "                       GENERAL INFORMATION\n";
             cout << "-------------------------------------------------------------------------------------------------------------\n";
             cout << "You're a marine soldier. Your work here is to sink all the ships of the rival." << endl;
-            cout << "Your and your enemy have the same ships, ten ships, here with the list:" << endl;
-            cout << "1. One ships whith size of 4." << endl;
-            cout << "2. Two ships with size of 3." << endl;
-            cout << "3. Three ships with size of 2." << endl;
-            cout << "4. Four ships with size of 1." << endl;
+            cout << "Each player has 10 ships:" << endl;
+            cout << "1. One ship of size 4." << endl;
+            cout << "2. Two ships of size 3." << endl;
+            cout << "3. Three ships of size 2." << endl;
+            cout << "4. Four ships of size 1." << endl;
             cout << "-------------------------------------------------------------------------------------------------------------\n";
             cout << "                              RULES \n";
             cout << "-------------------------------------------------------------------------------------------------------------\n";
-            cout << "1. You have to place these ships starting from the biggest one (ships can't touch each other)." << endl;
-            cout << "2. Enter an upper letter and a number from 0 to 9 without space to place the ship." << endl;
-            cout << "3. Select horizontal or vertical position with H/V letters." << endl;
-            cout << "4. After placing it, board of CPU will show up. Here game will start! You have to sink all the ships of the enemy." << endl;
-            cout << "5. The first one who gets 20 straight shoots will become a winner!" << endl;
+            cout << "1. Ships can't touch each other." << endl;
+            cout << "2. Use A-J and 0-9 for coordinates (e.g. A5)." << endl;
+            cout << "3. H/V defines orientation." << endl;
+            cout << "4. First to reach 20 hits wins!" << endl;
 
             system("pause");
             system("cls");
             goto MENU;
         }
-        else if (opcion == 3)
+        else if (opcion == 4)
         {
             system("cls");
             cout << "                          BATTLESHIP \n";
@@ -61,23 +185,12 @@ MENU:
             cout << " 1. Hector Andres Lopez Medrano     00015725" << endl;
             cout << " 2. Rodrigo Josue Medrano Marquez   00148625" << endl;
             cout << " 3. Andres Eduardo Vega Mena        00077125" << endl;
-            cout << " 4. Ricardo Antonio Ramos Rosales  00025325" << endl;
-            cout << R"(
-
-  ____        _   _   _           _____ _     _       
- |  _ \      | | | | | |         / ____| |   (_)      
- | |_) | __ _| |_| |_| | ___    | (___ | |__  _ _ __        __/___
- |  _ < / _` | __| __| |/ _ \    \___ \| '_ \| | '_ \    __/_____/____|  
- | |_) | (_| | |_| |_| |  __/    ____) | | | | | |_) |   \           \
- |____/ \__,_|\__|\__|_|\___|   |_____/|_| |_|_| .__/    ~~~~~~~~~~~~~~~
-                                               | |    
-                                               |_|    
-)";
+            cout << " 4. Ricardo Antonio Ramos Rosales   00025325" << endl;
             system("pause");
             system("cls");
             goto MENU;
         }
-        else if (opcion == 4)
+        else if (opcion == 5)
         {
             exit(EXIT_FAILURE);
         }
