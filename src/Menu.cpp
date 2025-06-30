@@ -47,18 +47,17 @@ MENU:
                 system("cls");
             }
 
-            int i = 0;
             while (true)
             {
                 Draw_Shooting();
                 Input_Coord();
                 Update_Computer_Grid();
                 Update_Player_Grid();
-                cout << "   Points Computer: " << Count_Computer << endl
-                     << "   Points Player: " << Count_Player << endl
-                     << "   --------------------\n";
+                cout << "   Points Computer: " << Count_Computer << endl;
+                cout << "   Points Player: " << Count_Player << endl;
+                cout << "   --------------------\n";
                 system("PAUSE");
-                i++;
+
                 system("cls");
                 if (Count_Computer == 20 || Count_Player == 20)
                     break;
@@ -69,17 +68,26 @@ MENU:
             Update_Computer_Grid();
             Update_Player_Grid();
 
-            bool playerWon = Count_Player == 20;
-            if (playerWon)
-                cout << "\n   Computer WON!";
-            else
-                cout << "\n   Player Won!";
-
-            cout << endl;
-            system("pause");
+            if (Count_Computer == 20)
+            {
+                cout << "\n   COMPUTER WON!";
+                Sleep(4000);
+                system("cls");
+                cout << endl;
+                system("pause");
+            }
+            else if (Count_Player == 20)
+            {
+                cout << "\n   PLAYER WON!";
+                Sleep(4000);
+                system("cls");
+                cout << endl;
+                system("pause");
+            }
         }
         else if (opcion == 2)
         {
+
             system("cls");
             status = false;
 
@@ -109,44 +117,8 @@ MENU:
                 system("CLS");
             }
 
-            int turn = 1;
-            while (true)
-            {
-                Draw_Shooting2();
-                if (turn % 2 != 0)
-                {
-                    cout << "\n   PLAYER 1 TURN\n";
-                    Input_Coord2(); // P1 dispara a P2
-                    Update_Player2_Grid();
-                }
-                else
-                {
-                    cout << "\n   PLAYER 2 TURN\n";
-                    Input_Coord();          // P2 dispara a P1
-                    Update_Computer_Grid(); // Aquí "Computer" representa el tablero de P1
-                }
-
-                cout << "   Points Player 1: " << Count_Player2 << endl;
-                cout << "   Points Player 2: " << Count_Player << endl;
-                cout << "   --------------------\n";
-                system("PAUSE");
-                system("CLS");
-
-                if (Count_Player2 == 20 || Count_Player == 20)
-                    break;
-
-                turn++;
-            }
-
-            Draw_Shooting2();
-
-            if (Count_Player2 == 20)
-                cout << "\n   Player 1 Wins!";
-            else
-                cout << "\n   Player 2 Wins!";
-
-            cout << endl;
-            system("pause");
+            // INICIA EL JUEGO MULTIJUGADOR
+            StartBattle();
         }
         else if (opcion == 3)
         {
@@ -195,4 +167,8 @@ MENU:
             exit(EXIT_FAILURE);
         }
     }
+
+    // system("pause");
 }
+//}
+//}
