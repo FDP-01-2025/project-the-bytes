@@ -26,8 +26,7 @@ void drawBoard()
 			else if (playerBoard[i][j] == 1) // We use 1 to indicate that exist the ship
 			{
 				cout << "0 "; // The ship is printed
-
-			} 
+			}
 		}
 		cout << endl;
 	}
@@ -39,7 +38,7 @@ void startingCoords()
 
 	do
 	{
-		cout << "   Input a coordinates X & Y (Ex.: A5): "; // We ask the user for a coord
+		cout << "   Input a coordinates X & Y (Ex: C5): "; // We ask the user for a coord
 		cin >> Coordenate;
 
 		// Assci Table
@@ -121,11 +120,10 @@ void newCordsplayer(int i)
 						break;
 						// We checking if four long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeat_input = true;
-
-					} // The ship exceeded the limits
+					}
 				}
 				else if (i >= 2 && i < 4) // Size of the ship (two) box
 				{
@@ -152,7 +150,7 @@ void newCordsplayer(int i)
 						break;
 						// Checking if two long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeat_input = true;
 					}
@@ -173,7 +171,7 @@ void newCordsplayer(int i)
 						break;
 						// Checking if four long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeat_input = true;
 					}
@@ -190,8 +188,10 @@ void newCordsplayer(int i)
 						break;
 						// Checking if three long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
+					{
 						repeat_input = true;
+					}
 				}
 				else if (i > 3 && i < 7) // Size of the ship (three) box
 				{
@@ -202,7 +202,7 @@ void newCordsplayer(int i)
 						break;
 						// Checking if two long ship coordinates are free for ship
 					}
-					else
+					else // The ship exceeded the limits
 					{
 						repeat_input = true;
 					}
@@ -225,7 +225,7 @@ void newCordsplayer(int i)
 		{
 			playerBoard[Coordx + 1][Coordy] = 2;
 		}
-		
+
 		if (playerBoard[Coordx][Coordy + 1] == 0)
 		{
 			playerBoard[Coordx][Coordy + 1] = 2;
