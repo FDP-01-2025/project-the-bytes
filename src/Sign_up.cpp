@@ -9,28 +9,28 @@ void saveData(const Jugador &Player)
     ofstream archivo("SIGN UP.txt", ios::app);
     if (!archivo)
     {
-        cerr << "Error al abrir el archivo." << endl;
+        cerr << "Error, the file doesn't work." << endl; //If the document doesn't work
         return;
     }
 
-    archivo << "Nombre: " << Player.name << " | Carnet: " << Player.ID << endl;
+    archivo << "Name: " << Player.name << " | ID: " << Player.ID << endl; //We write the info in the document.txt
     archivo.close();
 
-    cout << "Registro guardado exitosamente.\n";
+    cout << "Sign up correctly.\n";
 }
 
 void SignUp1Player()
 {
     Jugador Player;
 
-    cin.ignore(); // Limpiar buffer
-    cout << "REGISTRO DEL JUGADOR\n";
-    cout << "Nombre: ";
+    cin.ignore(); // To clean buffer
+    cout << "REGISTER OF PLAYER\n";
+    cout << "Name: "; //The user write his/her name
     getline(cin, Player.name);
 
     Sleep(1000);
 
-    cout << "Carnet: ";
+    cout << "ID: ";
     getline(cin, Player.ID);
 
     saveData(Player);
@@ -45,25 +45,24 @@ void SignUp1vs1()
 
     cin.ignore(); // To clean the buffer
 
-    cout << "REGISTRO DEL JUGADOR 1\n";
-    cout << "Nombre: ";
+    cout << "REGISTER OF PLAYER 1\n";
+    cout << "Name: ";
     getline(cin, Player1.name);
 
     Sleep(1000);
 
-    cout << "Carnet: ";
+    cout << "ID: ";
     getline(cin, Player1.ID);
     saveData(Player1);
-
     Sleep(2000);
 
-    cout << "\nREGISTRO DEL JUGADOR 2\n";
-    cout << "Nombre: ";
+    cout << "\nREGISTER OF PLAYER 2\n";
+    cout << "Name: ";
     getline(cin, Player2.name);
 
     Sleep(1000);
 
-    cout << "Carnet: ";
+    cout << "ID: ";
     getline(cin, Player2.ID);
     saveData(Player2);
     Sleep(2000);
