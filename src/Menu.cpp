@@ -6,6 +6,7 @@
 #include "CPU.h"
 #include "Shooting.h"
 #include "Shooting2.h"
+#include "Sign_up.h"
 
 using namespace std;
 
@@ -32,6 +33,8 @@ MENU:
             system("cls");
             status = false;
 
+            SignUp1Player();
+
             initComputer();
 
             for (int i = 0; i < 10; i++)
@@ -40,7 +43,9 @@ MENU:
 
                 startingCoords();
                 if (i < 6)
+                {
                     startingPosition();
+                }
 
                 newCordsplayer(i + 1);
                 updatedComputerCords(i + 1);
@@ -60,7 +65,9 @@ MENU:
 
                 system("cls");
                 if (Count_Computer == 20 || Count_Player == 20)
+                {
                     break;
+                }
             }
 
             Draw_Shooting();
@@ -90,6 +97,8 @@ MENU:
 
             system("cls");
             status = false;
+
+            SignUp1vs1();
 
             // PLAYER 1
             for (int i = 0; i < 10; i++)

@@ -4,12 +4,12 @@
 #include "windows.h"
 #include "./src/Animated_Title.cpp"
 #include "./src/Menu.cpp"
-#include"./src/CPU.cpp"
-#include"./src/Player.cpp"
-#include"./src/Player2.cpp"
-#include"./src/Shooting.cpp"
-#include"./src/Shooting2.cpp"
-
+#include "./src/CPU.cpp"
+#include "./src/Player.cpp"
+#include "./src/Player2.cpp"
+#include "./src/Shooting.cpp"
+#include "./src/Shooting2.cpp"
+#include "./src/Sign_up.cpp"
 
 using namespace std;
 

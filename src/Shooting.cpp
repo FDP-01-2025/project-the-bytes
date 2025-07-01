@@ -7,8 +7,8 @@
 
 using namespace std;
 
-int Count_Player = 0; //Count of points of  player
-int Count_Computer = 0; //Count of point of computer
+int Count_Player = 0;   // Count of points of  player
+int Count_Computer = 0; // Count of point of computer
 
 int positions[100][2]; // Size of the array
 int posCount = 0;      // Number of elements in position
@@ -96,25 +96,39 @@ void Draw_Shooting()
         for (int j = 1; j < playerColumns - 1; j++)
         {
             if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2) // 0 for free coordinate and 2 for ship place
+            {
                 cout << ". ";
+            }
             else if (playerBoard[i][j] == 3) // 3 if the shoot impact in a ship
+            {
                 cout << "X ";
+            }
             else if (playerBoard[i][j] == 4) // 4 if the shoot not impact in a ship
+            {
                 cout << "* ";
+            }
             else if (playerBoard[i][j] == 1) // 1 if exist a ship
+            {
                 cout << "0 ";
+            }
         }
 
-        // APART OF COMPUTER
+        // Part of computer
         cout << "          " << letter++ << " ";
         for (int j = 1; j < playerColumns - 1; j++)
         {
             if (computerBoard[i][j] == 2 || computerBoard[i][j] == 1 || computerBoard[i][j] == 0) // 0 if the space is void. 1 if exist a ship. 2 for the sides ship;
+            {
                 cout << ". ";
+            }
             else if (computerBoard[i][j] == 3) // This gonna pass if the shoot impact with any ship
+            {
                 cout << "X ";
+            }
             else if (computerBoard[i][j] == 4) // This gonna pass if the shoot not impact in any ship
+            {
                 cout << "* ";
+            }
         }
         cout << endl;
     }
@@ -159,24 +173,34 @@ void Update_Player_Grid()
             if (playerBoard[shootX][shootY] == 1)
             {
                 playerBoard[shootX][shootY] = 3; // If the cpu hit the ship, print this
-                cout << "   CPU HIT!\n";
+                cout << "   CPU HIT A SHIP!\n";
                 Count_Computer++;
 
                 if (posCount == 0)
                 {
                     if (shootY - 1 >= 1 && (playerBoard[shootX][shootY - 1] == 2 || playerBoard[shootX][shootY - 1] == 0 || playerBoard[shootX][shootY - 1] == 1))
+                    {
                         PushPosition(shootX, shootY - 1);
+                    }
                     if (shootY + 1 <= 10 && (playerBoard[shootX][shootY + 1] == 2 || playerBoard[shootX][shootY + 1] == 0 || playerBoard[shootX][shootY + 1] == 1))
+                    {
                         PushPosition(shootX, shootY + 1);
+                    }
                     if (shootX - 1 >= 1 && (playerBoard[shootX - 1][shootY] == 2 || playerBoard[shootX - 1][shootY] == 0 || playerBoard[shootX - 1][shootY] == 1))
+                    {
                         PushPosition(shootX - 1, shootY);
+                    }
                     if (shootX + 1 <= 9 && (playerBoard[shootX + 1][shootY] == 2 || playerBoard[shootX + 1][shootY] == 0 || playerBoard[shootX + 1][shootY] == 1))
+                    {
                         PushPosition(shootX + 1, shootY);
+                    }
                 }
             }
             else if (playerBoard[shootX][shootY] == 2 || playerBoard[shootX][shootY] == 0)
+            {
                 playerBoard[shootX][shootY] = 4;
-            break;
+                break;
+            }
         }
         else
         {

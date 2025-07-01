@@ -3,6 +3,6 @@
 #ifndef SCOREMANAGER_H
 #define SCOREMANAGER_H
 
-void updateScore(bool playerWon);
+void updateScore();
 
 #endif

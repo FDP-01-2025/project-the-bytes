@@ -27,13 +27,13 @@ void InitShooting2(int a, int b, string c)
     Cord2 = c;
 }
 
-// 🔹 Entrada para Player 1
+// Input to Player 1
 void Input_Coord1()
 {
     bool correct_cord;
     do
     {
-        cout << "   Player 1, input coordinates to shoot at Player 2 (Ex.: A5): ";
+        cout << "   Player 1, write the coordinates to shoot at Player 2 (Ex.: C4): ";
         cin >> Cord1;
 
         shootX1 = Cord1[0] - 64;
@@ -55,13 +55,13 @@ void Input_Coord1()
     } while (!correct_cord);
 }
 
-// 🔹 Entrada para Player 2
+//  Input to Player 2
 void Input_Coord2()
 {
     bool correct_cord;
     do
     {
-        cout << "   Player 2, input coordinates to shoot at Player 1 (Ex.: A5): ";
+        cout << "   Player 2, write the coordinates to shoot at Player 1 (Ex.: C4): ";
         cin >> Cord2;
 
         shootX2 = Cord2[0] - 64;
@@ -83,7 +83,7 @@ void Input_Coord2()
     } while (!correct_cord);
 }
 
-// 🔹 Mostrar tableros
+// Show boards
 void Draw_Shooting2()
 {
     cout << "                   Player 1                         Player 2\n            0 1 2 3 4 5 6 7 8 9             0 1 2 3 4 5 6 7 8 9\n";
@@ -95,30 +95,46 @@ void Draw_Shooting2()
         for (int j = 1; j < player2Columns - 1; j++)
         {
             if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2)
+            {
                 cout << ". ";
+            }
             else if (playerBoard[i][j] == 3)
+            {
                 cout << "X ";
+            }
             else if (playerBoard[i][j] == 4)
+            {
                 cout << "* ";
+            }
             else if (playerBoard[i][j] == 1)
+            {
                 cout << "0 ";
+            }
         }
 
         cout << "          " << letter++ << " ";
         for (int j = 1; j < player2Columns - 1; j++)
         {
             if (player2Board[i][j] == 0 || player2Board[i][j] == 2 || player2Board[i][j] == 1)
+            {
                 cout << ". ";
+            }
+
             else if (player2Board[i][j] == 3)
+            {
                 cout << "X ";
+            }
+
             else if (player2Board[i][j] == 4)
+            {
                 cout << "* ";
+            }
         }
         cout << endl;
     }
 }
 
-// 🔹 Player 1 dispara a Player 2
+// Player 1 shoot to Player 2
 void Update_Player1_Grid()
 {
     while (true)
@@ -128,19 +144,19 @@ void Update_Player1_Grid()
             if (player2Board[shootX1][shootY1] == 1)
             {
                 player2Board[shootX1][shootY1] = 3;
-                cout << "   Player 1 HIT Player 2!\n";
+                cout << " PLAYER 1 HIT A SHIP!\n";
                 Count_Player1++;
             }
             else
             {
                 player2Board[shootX1][shootY1] = 4;
-                cout << "   Player 1 missed.\n";
+                cout << " PLAYER 1 MISSED.\n";
             }
             break;
         }
         else
         {
-            cout << "   Already shot there. Try again.\n";
+            cout << " Already shot there. Try again.\n";
             Input_Coord1();
         }
     }
@@ -156,13 +172,13 @@ void Update_Player2_Grid()
             if (playerBoard[shootX2][shootY2] == 1)
             {
                 playerBoard[shootX2][shootY2] = 3;
-                cout << "   Player 2 HIT Player 1!\n";
+                cout << " PLAYER 2 HIT A SHIP!\n";
                 Count_Player2++;
             }
             else
             {
                 playerBoard[shootX2][shootY2] = 4;
-                cout << "   Player 2 missed.\n";
+                cout << " Player 2 missed.\n";
             }
             break;
         }
@@ -184,11 +200,17 @@ void Draw_Player1_View()
         for (int j = 1; j < player2Columns - 1; j++)
         {
             if (player2Board[i][j] == 0 || player2Board[i][j] == 2 || player2Board[i][j] == 1)
+            {
                 cout << ". ";
+            }
             else if (player2Board[i][j] == 3)
+            {
                 cout << "X ";
+            }
             else if (player2Board[i][j] == 4)
+            {
                 cout << "* ";
+            }
         }
         cout << endl;
     }
@@ -205,17 +227,23 @@ void Draw_Player2_View()
         for (int j = 1; j < playerColumns - 1; j++)
         {
             if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2 || playerBoard[i][j] == 1)
+            {
                 cout << ". ";
+            }
             else if (playerBoard[i][j] == 3)
+            {
                 cout << "X ";
+            }
             else if (playerBoard[i][j] == 4)
+            {
                 cout << "* ";
+            }
         }
         cout << endl;
     }
 }
 
-// 🔹 Bucle de juego por turnos
+// Start the multiplayer game
 void StartBattle()
 {
     while (Count_Player1 != 20 && Count_Player2 != 20)
@@ -247,7 +275,6 @@ void StartBattle()
             system("PAUSE");
             Sleep(2000);
             system("CLS");
-
         }
 
         system("PAUSE");

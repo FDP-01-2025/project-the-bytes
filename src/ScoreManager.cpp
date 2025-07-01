@@ -1,32 +1,41 @@
 
-
-// ScoreManager.cpp
 #include <iostream>
 #include <fstream>
+#include "scoreManager.h"
+
 using namespace std;
 
-// Variables globales para contar las partidas ganadas y perdidas
-int wins = 0;
-int losses = 0;
+int main()
+{
+    updateScore();
+}
 
-void updateScore(bool playerWon) {
-    if (playerWon) {
-        wins++;
-    } else {
-        losses++;
-    }
+void updateScore()
+{
+    bool playerWon = true;
+    int wins = 0;
+    int losses = 0;
+    if (playerWon)
+    {
+        wins++;
+    }
+    else
+    {
+        losses++;
+    }
 
-    // Guardar los resultados en un archivo
-    ofstream scoreFile("score.txt");
-    if (scoreFile.is_open()) {
-        scoreFile << "Partidas ganadas por el jugador: " << wins << endl;
-        scoreFile << "Partidas ganadas por la computadora: " << losses << endl;
-        scoreFile.close();
-    } else {
-        cerr << "Error al abrir el archivo de puntuaciones." << endl;
-    }
+    ofstream scoreFile("score.txt");
+    if (scoreFile.is_open())
+    {
+        scoreFile << "Partidas ganadas por el jugador: " << wins << endl;
+        scoreFile << "Partidas ganadas por la computadora: " << losses << endl;
+        scoreFile.close();
+    }
+    else
+    {
+        cerr << "Error al abrir el archivo de puntuaciones." << endl;
+    }
 
-    // Mostrar el resultado actual
-    cout << "Partidas ganadas por el jugador: " << wins << endl;
-    cout << "Partidas ganadas por la computadora: " << losses << endl;
+    cout << "Partidas ganadas por el jugador: " << wins << endl;
+    cout << "Partidas ganadas por la computadora: " << losses << endl;
 }

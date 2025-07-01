@@ -20,9 +20,13 @@ void drawBoard2()
         for (int j = 1; j < player2Columns - 1; j++)
         {
             if (player2Board[i][j] == 0 || player2Board[i][j] == 2) // We use 0 to free cords, then we use 2 to ship sides
+            {
                 cout << ". ";
+            }
             else if (player2Board[i][j] == 1) // We use 1 to indicate that exist the ship
+            {
                 cout << "0 ";
+            }
         }
         cout << endl;
     }
@@ -88,14 +92,18 @@ void newCordsplayer2(int i)
         if (player2Board[Coordx2][Coordy2] == 0) // We checking if the first coordinate is free to put a ship
         {
             if (i > 6)
+            {
                 player2Board[Coordx2][Coordy2] = 1; // It gonna put ship with size 1
+            }
             break;
         }
         else
         {
             startingCoords2();
             if (i < 7) // Is mandatory do this until the last ship.
+            {
                 startingPosition2();
+            }
         }
     }
 
@@ -118,7 +126,9 @@ void newCordsplayer2(int i)
                         // We checking if four long ship coordinates are free for ship
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
                 else if (i >= 2 && i < 4) // Size of the ship (two) box
                 {
@@ -132,7 +142,9 @@ void newCordsplayer2(int i)
                         break;
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
                 else if (i > 3 && i < 7) // Size of the ship (three) box
                 {
@@ -143,7 +155,9 @@ void newCordsplayer2(int i)
                         break;
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
             }
             else if (position2 == 'H' || position2 == 'h')
@@ -160,7 +174,9 @@ void newCordsplayer2(int i)
                         // Checking if 4 long ship coordinates are free for ship
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
                 else if (i >= 2 && i < 4) // Size of the ship (two) box
                 {
@@ -173,7 +189,9 @@ void newCordsplayer2(int i)
                         // Checking if 3 long ship coordinates are free for ship
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
                 else if (i > 3 && i < 7) // Size of the ship (three) box
                 {
@@ -185,7 +203,9 @@ void newCordsplayer2(int i)
                         // Checking if 2 long ship coordinates are free for ship
                     }
                     else // The ship exceeded the limits
+                    {
                         repeat_input = true;
+                    }
                 }
             }
 
@@ -193,7 +213,9 @@ void newCordsplayer2(int i)
             {
                 startingCoords2();
                 if (i < 7)
+                {
                     startingPosition2(); // Is mandatory do this until the last ship.
+                }
             }
         }
 
@@ -201,26 +223,54 @@ void newCordsplayer2(int i)
     {
         {
             if (player2Board[Coordx2 + 1][Coordy2] == 0)
+            {
                 player2Board[Coordx2 + 1][Coordy2] = 2;
+            }
+
             if (player2Board[Coordx2][Coordy2 + 1] == 0)
+            {
                 player2Board[Coordx2][Coordy2 + 1] = 2;
+            }
+
             if (player2Board[Coordx2 - 1][Coordy2] == 0)
+            {
                 player2Board[Coordx2 - 1][Coordy2] = 2;
+            }
+
             if (player2Board[Coordx2][Coordy2 - 1] == 0)
+            {
                 player2Board[Coordx2][Coordy2 - 1] = 2;
+            }
+
             if (player2Board[Coordx2 + 1][Coordy2 + 1] == 0)
+            {
                 player2Board[Coordx2 + 1][Coordy2 + 1] = 2;
+            }
+
             if (player2Board[Coordx2 - 1][Coordy2 - 1] == 0)
+            {
                 player2Board[Coordx2 - 1][Coordy2 - 1] = 2;
+            }
+
             if (player2Board[Coordx2 + 1][Coordy2 - 1] == 0)
+            {
                 player2Board[Coordx2 + 1][Coordy2 - 1] = 2;
+            }
+
             if (player2Board[Coordx2 - 1][Coordy2 + 1] == 0)
+            {
                 player2Board[Coordx2 - 1][Coordy2 + 1] = 2;
+            }
 
             if (player2Board[Coordx2 + 1][Coordy2] == 1)
+            {
                 Coordx2++;
+            }
+
             if (player2Board[Coordx2][Coordy2 + 1] == 1)
+            {
                 Coordy2++;
+            }
         }
     }
 }

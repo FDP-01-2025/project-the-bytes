@@ -20,9 +20,14 @@ void drawBoard()
 		for (int j = 1; j < playerColumns - 1; j++)
 		{
 			if (playerBoard[i][j] == 0 || playerBoard[i][j] == 2) // We use 0 to free cords, then we use 2 to ship sides
+			{
 				cout << ". ";
+			}
 			else if (playerBoard[i][j] == 1) // We use 1 to indicate that exist the ship
-				cout << "0 ";				 // The ship is printed
+			{
+				cout << "0 "; // The ship is printed
+
+			} 
 		}
 		cout << endl;
 	}
@@ -116,8 +121,11 @@ void newCordsplayer(int i)
 						break;
 						// We checking if four long ship coordinates are free for ship
 					}
-					else // The ship exceeded the limits
+					else
+					{
 						repeat_input = true;
+
+					} // The ship exceeded the limits
 				}
 				else if (i >= 2 && i < 4) // Size of the ship (two) box
 				{
@@ -130,7 +138,9 @@ void newCordsplayer(int i)
 						break;
 					}
 					else // The ship exceeded the limits
+					{
 						repeat_input = true;
+					}
 				}
 				else if (i > 3 && i < 7) // Size of the ship (three) box
 				{
@@ -143,7 +153,9 @@ void newCordsplayer(int i)
 						// Checking if two long ship coordinates are free for ship
 					}
 					else
+					{
 						repeat_input = true;
+					}
 				}
 			}
 			else if (position == 'H') // This is only to  horizontal position.
@@ -162,14 +174,16 @@ void newCordsplayer(int i)
 						// Checking if four long ship coordinates are free for ship
 					}
 					else
+					{
 						repeat_input = true;
+					}
 				}
 				else if (i >= 2 && i < 4) // Size of the ship (two) box
 				{
 					if (Coordy < 9 && playerBoard[Coordx][Coordy + 1] == 0 && playerBoard[Coordx][Coordy + 2] == 0)
 					{
 						// The ship must never leave the limits
-						
+
 						playerBoard[Coordx][Coordy] = 1;
 						playerBoard[Coordx][Coordy + 1] = 1;
 						playerBoard[Coordx][Coordy + 2] = 1;
@@ -189,7 +203,9 @@ void newCordsplayer(int i)
 						// Checking if two long ship coordinates are free for ship
 					}
 					else
+					{
 						repeat_input = true;
+					}
 				}
 			}
 
@@ -197,32 +213,62 @@ void newCordsplayer(int i)
 			{
 				startingCoords();
 				if (i < 7)
+				{
 					startingPosition(); // Is mandatory do this until the last ship.
+				}
 			}
 		}
 
 	for (int p = 0; p < 4; p++) // Area of the ship
 	{
 		if (playerBoard[Coordx + 1][Coordy] == 0)
+		{
 			playerBoard[Coordx + 1][Coordy] = 2;
+		}
+		
 		if (playerBoard[Coordx][Coordy + 1] == 0)
+		{
 			playerBoard[Coordx][Coordy + 1] = 2;
+		}
+
 		if (playerBoard[Coordx - 1][Coordy] == 0)
+		{
 			playerBoard[Coordx - 1][Coordy] = 2;
+		}
+
 		if (playerBoard[Coordx][Coordy - 1] == 0)
+		{
 			playerBoard[Coordx][Coordy - 1] = 2;
+		}
+
 		if (playerBoard[Coordx + 1][Coordy + 1] == 0)
+		{
 			playerBoard[Coordx + 1][Coordy + 1] = 2;
+		}
+
 		if (playerBoard[Coordx - 1][Coordy - 1] == 0)
+		{
 			playerBoard[Coordx - 1][Coordy - 1] = 2;
+		}
+
 		if (playerBoard[Coordx + 1][Coordy - 1] == 0)
+		{
 			playerBoard[Coordx + 1][Coordy - 1] = 2;
+		}
+
 		if (playerBoard[Coordx - 1][Coordy + 1] == 0)
+		{
 			playerBoard[Coordx - 1][Coordy + 1] = 2;
+		}
 
 		if (playerBoard[Coordx + 1][Coordy] == 1)
+		{
 			Coordx++;
+		}
+
 		if (playerBoard[Coordx][Coordy + 1] == 1)
+		{
 			Coordy++;
+		}
 	}
 }
