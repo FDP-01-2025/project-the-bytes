@@ -7,6 +7,8 @@
 #include "Shooting.h"
 #include "Shooting2.h"
 #include "Sign_up.h"
+#include "explosion.h"
+
 
 using namespace std;
 
@@ -86,6 +88,7 @@ MENU:
             else if (Count_Player == 20)
             {
                 cout << "\n   PLAYER WON!";
+                void playExplosionSound();
                 Sleep(4000);
                 system("cls");
                 cout << endl;
