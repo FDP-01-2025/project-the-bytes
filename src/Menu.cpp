@@ -160,16 +160,17 @@ MENU:
         else if (opcion == 4)
         {
             system("cls");
-            cout << "                          BATTLESHIP \n";
-            cout << "---------------------------------------------------------------" << endl;
-            cout << "                   A GAME CREATED BY: THE BYTES" << endl;
-            cout << "---------------------------------------------------------------" << endl;
-            cout << "                        MEMBERS OF THE TEAM" << endl;
-            cout << "---------------------------------------------------------------" << endl;
-            cout << " 1. Hector Andres Lopez Medrano     00015725" << endl;
-            cout << " 2. Rodrigo Josue Medrano Marquez   00148625" << endl;
-            cout << " 3. Andres Eduardo Vega Mena        00077125" << endl;
-            cout << " 4. Ricardo Antonio Ramos Rosales   00025325" << endl;
+            cout << "                                 BATTLESHIP                                  \n";
+            cout << "-----------------------------------------------------------------------------\n";
+            cout << "                        A GAME CREATED BY: THE BYTES                         \n";
+            cout << "-----------------------------------------------------------------------------\n";
+            cout << "                           MEMBERS OF THE TEAM                              \n";
+            cout << "-----------------------------------------------------------------------------\n";
+            cout << "     1. Hector Andres Lopez Medrano     00015725                             \n";
+            cout << "     2. Rodrigo Josue Medrano Marquez   00148625                             \n";
+            cout << "     3. Andres Eduardo Vega Mena        00077125                             \n";
+            cout << "     4. Ricardo Antonio Ramos Rosales   00025325                             \n";
+
             system("pause");
             system("cls");
             goto MENU;
