@@ -9,7 +9,6 @@
 #include "Sign_up.h"
 #include "explosion.h"
 
-
 using namespace std;
 
 void Menu()
@@ -22,8 +21,9 @@ MENU:
     cout << "                        1. PLAYER VS CPU\n";
     cout << "                        2. MULTIPLAYER\n";
     cout << "                        3. RULES\n";
-    cout << "                        4. CREDITS\n";
-    cout << "                        5. EXIT\n";
+    cout << "                        4. SOUND OPTIONS\n";
+    cout << "                        5. CREDITS\n";
+    cout << "                        6. EXIT\n";
     cout << "         ---------------------------------------------\n";
     cin >> opcion;
 
@@ -157,7 +157,13 @@ MENU:
             system("cls");
             goto MENU;
         }
+
         else if (opcion == 4)
+        {
+            /* code */
+        }
+
+        else if (opcion == 5)
         {
             system("cls");
             cout << "                                 BATTLESHIP                                  \n";
@@ -175,7 +181,7 @@ MENU:
             system("cls");
             goto MENU;
         }
-        else if (opcion == 5)
+        else if (opcion == 6)
         {
             exit(EXIT_FAILURE);
         }
