@@ -2,6 +2,7 @@
 using namespace std;
 #include <windows.h>
 #include <mmsystem.h>
+#include "sound_functions.h"
 #pragma comment(lib, "winmm.lib")
 
 int volume = 10; // It define the initial value of the volume
