@@ -53,15 +53,15 @@ void soundOptions() {
                 stopMusic(); // Stop the music
                 break;
             case 4:
-                playMusic();
-                setVolume(volume);
+                playMusic(); // Resume music
+                setVolume(volume); // The sound returns
                 break;
             case 5:
                 exitMenu = true;
                 break;
             default:
-                cout << "Invalid option.\n";
-                Sleep(1000);
+                cout << "Invalid option." << endl; // If user types any other option
+                Sleep(1000); // Pause for 1 second
         }
     }
 }
