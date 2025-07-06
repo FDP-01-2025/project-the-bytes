@@ -135,23 +135,23 @@ MENU:
         else if (opcion == 3)
         {
             system("cls");
-            cout << "                           BATTLESHIP \n";
-            cout << "-------------------------------------------------------------------------------------------------------------\n";
-            cout << "                       GENERAL INFORMATION\n";
-            cout << "-------------------------------------------------------------------------------------------------------------\n";
-            cout << "You're a marine soldier. Your work here is to sink all the ships of the rival." << endl;
-            cout << "Each player has 10 ships:" << endl;
-            cout << "1. One ship of size 4." << endl;
-            cout << "2. Two ships of size 3." << endl;
-            cout << "3. Three ships of size 2." << endl;
-            cout << "4. Four ships of size 1." << endl;
-            cout << "-------------------------------------------------------------------------------------------------------------\n";
-            cout << "                              RULES \n";
-            cout << "-------------------------------------------------------------------------------------------------------------\n";
-            cout << "1. Ships can't touch each other." << endl;
-            cout << "2. Use A-J and 0-9 for coordinates (e.g. A5)." << endl;
-            cout << "3. H/V defines orientation." << endl;
-            cout << "4. First to reach 20 hits wins!" << endl;
+            cout << "                                   BATTLESHIP                                   \n";
+            cout << "--------------------------------------------------------------------------------\n";
+            cout << "                             GENERAL INFORMATION                                \n";
+            cout << "--------------------------------------------------------------------------------\n";
+            cout << "               You're a marine soldier. Your job is to sink all rival ships.   \n";
+            cout << "                                 Each player has 10 ships:                     \n";
+            cout << "                       1. One ship of size 4.                                  \n";
+            cout << "                       2. Two ships of size 3.                                 \n";
+            cout << "                       3. Three ships of size 2.                               \n";
+            cout << "                       4. Four ships of size 1.                                \n";
+            cout << "--------------------------------------------------------------------------------\n";
+            cout << "                                   RULES                                       \n";
+            cout << "--------------------------------------------------------------------------------\n";
+            cout << "          1. Ships can't touch each other.                                     \n";
+            cout << "          2. Use A-J and 0-9 for coordinates (e.g. A5).                        \n";
+            cout << "          3. H/V defines orientation.                                          \n";
+            cout << "          4. First to reach 20 hits wins!                                      \n";
 
             system("pause");
             system("cls");
