@@ -1,45 +1,56 @@
-# NOMBRE DEL JUEGO: BATTLE SHIP
+# NAME OF THE GAME: BATTLE SHIP 🚢
 
 
-#### Descripción del Proyecto
+#### DESCRIPTION OF THE GAME
 
-Battleship es un juego enfocado en la estrategia y en la destruccion de embarcaciones enemigas, en Battleship te embarcaras en una aventura en contra de la Inteligent CPU, una maquina que esta entrenada para que logre adivinar las posibles ubicaciones de tus barcos, haciendo vivir este juego como una experiencia sin frenos, en donde ganara quien logre destruir todas las embarcaciones del rival. Crees que puedas derrotarla?. Si no te crees capaz puedes practicar contra un amigo con la opcion multijugador que tiene
+Battleship is a game focused on strategy and the destruction of enemy ships. In Battleship, you'll embark on an adventure against the Intelligent CPU, a machine trained to guess the possible locations of your ships. This game is a non-stop experience where the winner is the one who manages to destroy all of their opponent's ships. Think you can beat it? If you don't think you can, you can practice against a friend with the multiplayer option.
 
-A todos los marineros se le daran esta cantidad de barcos:
+All the mariners has these ships:
 
-|      Leviatan        |     Destructores        |        Cruceros          |        Escoltas           |         
-|----------------------|-------------------------|--------------------------|---------------------------|
-|La flota mas grande   |Estas flotas solo tiene  |Las flotas que solo       |Seamos realistas, solo son |
-|que existe en el      |un objetivo. Distraerte  |transportan a los soldados|para distraer al rival.    |
-|mar. Es el jefe de    |y acabarte. Usan tres    |Estas utilizan solo dos   |Estas flotas solo utilizan |
-|jefes.Usa 4 casillas. |casillas en el tablero.  |casillas en el tablero    |una casilla en el tablero  |
+- Leviatan: It is the largest warship of all time. You only have one of this.
 
-## Jugabilidad de Battleship
---------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------- 
-#### 1. Todos los jugadores tendran un tablero 10x10 en donde podran colocar sus barcos
+- Bombers : These have great strength and hardness. You only have two of these.
 
-#### 2. A todos los jugadores se le daran la siguiente cantidad de barcos:
+- Ironclad : These ships seek to hide among other ships. You only have three of these
+
+- Sneaky : These ships are the kings of stealth. You only have four of these.
+
+
+## BATTLESHIP GAMEPLAY
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+#### 1. All players will have a 10x10 board where they can place their ships.
   
-#### 3. Para disparar, se debera colocar primero la coordenada en Y y luego la coordenada en X, por ejemplo (C4), siendo C un punto dentro de la coordenada "Y" y 4 un punto dentro de la coordenada "X".
+#### 2.To shoot, you must first place the Y coordinate and then the X coordinate, for example (C4), where C is a point within the "Y" coordinate and 4 is a point within the "X" coordinate.
 
-#### 4. Para hacerlo mas emocionante, por cada impacto en un barco, sea rival o tuyo, se sumara 1 al contador de puntos. 
+#### 3. To make it more exciting, for every hit on a ship, whether it's yours or yours, 1 will be added to the score counter.
 
-#### 5. Los turnos para disparar en unas coordenadas seran intercalados entre los jugadores.
+#### 4. Turns to shoot at coordinates will be alternated between players.
 
-#### 6. Los jugadores marcan en su tablero de ataque los resultados para hacer seguimiento de sus intentos y aciertos.
+#### 5. Players marked the results on their attack board to keep track of their attempts and successes.
 
-#### 7. Gana el primer jugador que logre hundir toda la flota enemiga y en conseguir 20 puntos.
+#### 6. The first player to sink the entire enemy fleet and score 20 points wins.
 
 -------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------
 
-## IMPLEMENTACION DE LOS TEMAS VISTOS AL PROYECTO
+## TOPICS SEEN IN FUDP
 
-1. Se utilizara if, else y switch para todas las tomas de desiciones que deban existir dentro del videojuego.
-2. Se utilizara for, while y do while se utilizara para que se repitan mientras ciertas condiciones dadas se cumplan
-3. Los arreglos se usaran principalmente para la generacion de las casillas y guardar los datos de las ubicaciones de los barcos.
-4. Las funciones se usaran principalmente para rellenar el tablero de (~) y para utilizar un mismo bloque de codigo en varias partes del videojuego.
+1. Conditionals:
+
+2. Arrays:
+
+3. For
+
+4: While, do while
+
+5: Switch:
+
+6: Functions:
+
+7: Files:
+
+
 
 ## Equipo
 
