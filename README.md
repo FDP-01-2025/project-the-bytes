@@ -36,20 +36,24 @@ All the mariners has these ships:
 
 ## TOPICS SEEN IN FUDP
 
-1. Conditionals:
+1. If else, else if: They were used to control the board's measurement parameters so that no ship was placed outside the boundary. They were also used to verify whether the space for placing a ship was free or already used, and whether the shot hit a ship or not.
 
-2. Arrays:
+2. Arrays: We used tweaks for generating the entire board, both for the computer in vs. CPU mode and for multiplayer. We also used tweaks for placing ships on the board and for better handling of shooting per turn.
 
-3. For
+3. For: For is used to traverse within each board when placing ships. It's also used to traverse it to fire from a position. We also use it to identify the ship's area.
 
-4: While, do while
+4. While, do while: We primarily use it to create menus, so the user can play the game as many times as they want. We also used the while loop to verify whether the coordinates entered by the user are valid for the board or not. We have the user type them in until they are correct. 
 
-5: Switch:
+5. Switch: It was used to confirm in which direction the boat is placed, horizontal or vertical.
 
-6: Functions:
+6. Functions: They were used to make the code much more readable, organized, and not overload the main branch. Each part of the game is defined by a function that is only called.
 
-7: Files:
+7. Files:We use file management to keep track of the last few players who played the game. Mainly to keep track of all the players. To do this, we ask for their name and ID.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## MOCKUP OF BATTLESHIP
+
+![alt text](image.png)
 
 
 ## Equipo
