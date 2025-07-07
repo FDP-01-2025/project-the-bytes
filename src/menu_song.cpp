@@ -16,7 +16,8 @@ void setVolume(int percentage) {
 
 // Starts the music in the background in a loop
 void playMusic() {
-    PlaySound(TEXT("pirates_song.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+    PlaySound(TEXT("src/pirates_music.wav"), NULL, SND_ASYNC | SND_LOOP);
+
 }
 
 // Stop the music completely
