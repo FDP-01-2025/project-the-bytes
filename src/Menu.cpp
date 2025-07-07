@@ -14,6 +14,10 @@ using namespace std;
 
 void Menu()
 {
+
+    setVolume(10);
+    playMusic();
+
     int opcion;
 
 MENU:
@@ -184,6 +188,7 @@ MENU:
         }
         else if (opcion == 6)
         {
+            stopMusic()
             exit(EXIT_FAILURE);
         }
     }
