@@ -44,21 +44,26 @@ void soundOptions() {
 
         switch (soundOption) {
             case 1:
+                system("cls");
                 if (volume < 100) volume += 10; // Increase the volume
                 setVolume(volume); // The new volume is applied
                 break;
             case 2:
+                system("cls");
                 if (volume > 0) volume -= 10; // Decrease the volume
                 setVolume(volume); // The new volume is applied
                 break;
             case 3:
+                system("cls");
                 stopMusic(); // Stop the music
                 break;
             case 4:
+                system("cls");
                 playMusic(); // Resume music
                 setVolume(volume); // The sound returns
                 break;
             case 5:
+                system("cls");
                 exitMenu = true;
                 break;
             default:

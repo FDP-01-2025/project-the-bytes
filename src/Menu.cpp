@@ -165,7 +165,9 @@ MENU:
 
         else if (opcion == 4)
         {
+            system("cls");
             soundOptions();
+            goto MENU;
         }
 
         else if (opcion == 5)
