@@ -8,6 +8,7 @@
 #include "Shooting2.h"
 #include "Sign_up.h"
 #include "explosion.h"
+#include "sound_functions.h"
 
 using namespace std;
 
@@ -160,7 +161,7 @@ MENU:
 
         else if (opcion == 4)
         {
-            /* code */
+            soundOptions();
         }
 
         else if (opcion == 5)
