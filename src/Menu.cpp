@@ -8,7 +8,7 @@
 #include "Shooting2.h"
 #include "Sign_up.h"
 #include "explosion.h"
-#include "sound_functions.h"
+#include "menu_song.h"
 
 using namespace std;
 
@@ -188,7 +188,7 @@ MENU:
         }
         else if (opcion == 6)
         {
-            stopMusic()
+            stopMusic();
             exit(EXIT_FAILURE);
         }
     }

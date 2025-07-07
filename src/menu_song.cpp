@@ -2,7 +2,7 @@
 using namespace std;
 #include <windows.h>
 #include <mmsystem.h>
-#include "sound_functions.h"
+#include "menu_song.h"
 #pragma comment(lib, "winmm.lib")
 
 int volume = 10; // It define the initial value of the volume
@@ -34,7 +34,7 @@ void soundOptions() {
         cout << "|======Sound Options======|" << endl;
         cout << "Current volume: " << volume << "%\n\n";
         cout << "1. Increase volume (+10%)" << endl;
-        cout << "2. Decrease volume (-10%) << endl";
+        cout << "2. Decrease volume (-10%)" << endl;
         cout << "3. Mute music" << endl;
         cout << "4. Resume music" << endl;
         cout << "5. Return to main menu" << endl;

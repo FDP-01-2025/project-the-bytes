@@ -10,6 +10,7 @@
 #include "./src/Shooting.cpp"
 #include "./src/Shooting2.cpp"
 #include "./src/Sign_up.cpp"
+#include "./src/menu_song.cpp"
 
 using namespace std;
 
