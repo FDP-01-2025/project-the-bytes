@@ -1,5 +1,8 @@
-# NAME OF THE GAME: BATTLE SHIP 🚢
+# NAME OF THE GAME: BATTLESHIP 🚢
 
+### This is a story that all great-grandparents have told from generation to generation. One day you visited your grandfather and during lunch you said out loud: "Grandpa, tell me that story again, about when you sailed the seven seas because of the war."
+
+### Your grandfather just looks at you with a smile and says, "Okay, son, this is the story of the battleship..."
 
 #### DESCRIPTION OF THE GAME
 
@@ -56,22 +59,22 @@ All the mariners has these ships:
 ![alt text](image.png)
 
 
-## Equipo
+## TEAM
 
-- **Nombre del equipo:** [The bytes]
+- **Name of the team:** [The bytes]
 
-### Integrantes del equipo
+### Members of the team
 
-1. **Nombre completo:** [Hector Andres Lopez Medrano]  
+1. **Name:** [Hector Andres Lopez Medrano]  
    **Carnet:** [00015725]
 
-2. **Nombre completo:** [ Rodrigo Josue Medrano Marquez]  
+2. **Name:** [ Rodrigo Josue Medrano Marquez]  
    **Carnet:** [00148625]
 
-3. **Nombre completo:** [Andres Eduardo Vega Mena]  
+3. **Name:** [Andres Eduardo Vega Mena]  
    **Carnet:** [00077125]
 
-4. **Nombre completo:** [Ricardo Antonio Ramos Rosales]  
+4. **Name:** [Ricardo Antonio Ramos Rosales]  
    **Carnet:** [00025325]
 
 
