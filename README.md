@@ -53,6 +53,8 @@ All the mariners has these ships:
 
 7. Files:We use file management to keep track of the last few players who played the game. Mainly to keep track of all the players. To do this, we ask for their name and ID.
 
+8. Structs: We use structures to facilitate the creation of a txt file where users can register before playing and keep track of who has played the game. To do this, the user is asked to enter their name and ID, in this case their ID.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## MOCKUP OF BATTLESHIP
 
