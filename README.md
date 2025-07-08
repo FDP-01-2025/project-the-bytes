@@ -90,5 +90,5 @@ All the mariners has these ships:
    ```bash
    g++ Battleship.cpp -o Battleship.exe -lwinmm
 
-   4. Just enjoy it...
+4. Just enjoy it...
    
