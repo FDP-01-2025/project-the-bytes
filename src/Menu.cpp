@@ -7,7 +7,6 @@
 #include "Shooting.h"
 #include "Shooting2.h"
 #include "Sign_up.h"
-#include "explosion.h"
 #include "menu_song.h"
 
 using namespace std;

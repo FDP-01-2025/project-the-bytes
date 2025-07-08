@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-Name: Andres | ID: 77125
-Name: andres | ID: 77125
-Name: Andres | ID: 77125
-Name: Medrano  | ID: 8812
-=======
-Name: Hector | ID: 00015725
->>>>>>> a943c8a7c0ebd3cdb606148340954ff24bbdc4b1

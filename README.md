@@ -1,5 +1,8 @@
-# NAME OF THE GAME: BATTLE SHIP 🚢
+# NAME OF THE GAME: BATTLESHIP 🚢
 
+### *This is a story that all great-grandparents have told from generation to generation. One day you visited your grandfather and during lunch you said out loud: "Grandpa, tell me that story again, about when you sailed the seven seas because of the war."*
+
+### *Your grandfather just looks at you with a smile and says, "Okay, son, this is the story of the battleship..."*
 
 #### DESCRIPTION OF THE GAME
 
@@ -36,43 +39,58 @@ All the mariners has these ships:
 
 ## TOPICS SEEN IN FUDP
 
-1. Conditionals:
+1. If else, else if: They were used to control the board's measurement parameters so that no ship was placed outside the boundary. They were also used to verify whether the space for placing a ship was free or already used, and whether the shot hit a ship or not.
 
-2. Arrays:
+2. Arrays: We used tweaks for generating the entire board, both for the computer in vs. CPU mode and for multiplayer. We also used tweaks for placing ships on the board and for better handling of shooting per turn.
 
-3. For
+3. For: For is used to traverse within each board when placing ships. It's also used to traverse it to fire from a position. We also use it to identify the ship's area.
 
-4: While, do while
+4. While, do while: We primarily use it to create menus, so the user can play the game as many times as they want. We also used the while loop to verify whether the coordinates entered by the user are valid for the board or not. We have the user type them in until they are correct. 
 
-5: Switch:
+5. Switch: It was used to confirm in which direction the boat is placed, horizontal or vertical.
 
-6: Functions:
+6. Functions: They were used to make the code much more readable, organized, and not overload the main branch. Each part of the game is defined by a function that is only called.
 
-7: Files:
+7. Files:We use file management to keep track of the last few players who played the game. Mainly to keep track of all the players. To do this, we ask for their name and ID.
+
+8. Structs: We use structures to facilitate the creation of a txt file where users can register before playing and keep track of who has played the game. To do this, the user is asked to enter their name and ID, in this case their ID.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## MOCKUP OF BATTLESHIP
+
+![alt text](image.png)
 
 
+## TEAM
 
-## Equipo
+- **Name of the team:** [The bytes]
 
-- **Nombre del equipo:** [The bytes]
+### Members of the team
 
-### Integrantes del equipo
-
-1. **Nombre completo:** [Hector Andres Lopez Medrano]  
+1. **Name:** [Hector Andres Lopez Medrano]  
    **Carnet:** [00015725]
 
-2. **Nombre completo:** [ Rodrigo Josue Medrano Marquez]  
+2. **Name:** [ Rodrigo Josue Medrano Marquez]  
    **Carnet:** [00148625]
 
-3. **Nombre completo:** [Andres Eduardo Vega Mena]  
+3. **Name:** [Andres Eduardo Vega Mena]  
    **Carnet:** [00077125]
 
-4. **Nombre completo:** [Ricardo Antonio Ramos Rosales]  
+4. **Name:** [Ricardo Antonio Ramos Rosales]  
    **Carnet:** [00025325]
 
 
-## Instrucciones de Ejecución
+## Instructions to execute
 
-1. Clona este repositorio en tu máquina local:
+1. Clone this repository in your local machine (in the desktop):
    ```bash
-   git clone [URL del repositorio]
+   git clone [https://github.com/FDP-01-2025/project-the-bytes.git]
+
+2. Open Visual Studio Code and open the folder with the name "project-the/bytes"
+
+3. Once you are inside the folder, open a new terminal and type this to compile and run the game:
+   ```bash
+   g++ Battleship.cpp -o Battleship.exe -lwinmm
+
+4. Just enjoy it...
+   
