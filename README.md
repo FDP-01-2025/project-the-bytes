@@ -1,8 +1,8 @@
 # NAME OF THE GAME: BATTLESHIP 🚢
 
-### This is a story that all great-grandparents have told from generation to generation. One day you visited your grandfather and during lunch you said out loud: "Grandpa, tell me that story again, about when you sailed the seven seas because of the war."
+### *This is a story that all great-grandparents have told from generation to generation. One day you visited your grandfather and during lunch you said out loud: "Grandpa, tell me that story again, about when you sailed the seven seas because of the war."*
 
-### Your grandfather just looks at you with a smile and says, "Okay, son, this is the story of the battleship..."
+### *Your grandfather just looks at you with a smile and says, "Okay, son, this is the story of the battleship..."*
 
 #### DESCRIPTION OF THE GAME
 
