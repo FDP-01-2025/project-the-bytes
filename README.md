@@ -78,8 +78,17 @@ All the mariners has these ships:
    **Carnet:** [00025325]
 
 
-## Instrucciones de Ejecución
+## Instructions to execute
 
-1. Clona este repositorio en tu máquina local:
+1. Clone this repository in your local machine (in the desktop):
    ```bash
-   git clone [URL del repositorio]
+   git clone [https://github.com/FDP-01-2025/project-the-bytes.git]
+
+2. Open Visual Studio Code and open the folder with the name "project-the/bytes"
+
+3. Once you are inside the folder, open a new terminal and type this to compile and run the game:
+   ```bash
+   g++ Battleship.cpp -o Battleship.exe -lwinmm
+
+   4. Just enjoy it...
+   
