@@ -58,7 +58,7 @@ All the mariners has these ships:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## MOCKUP OF BATTLESHIP
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/296eb629-09d1-4c2c-a5a7-f0fc98f4789c)
 
 
 ## TEAM
@@ -94,6 +94,6 @@ All the mariners has these ships:
 
 4. Just enjoy it...
 
-   ![image](https://github.com/user-attachments/assets/296eb629-09d1-4c2c-a5a7-f0fc98f4789c)
+   
 
    
