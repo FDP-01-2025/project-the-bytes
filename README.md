@@ -93,4 +93,7 @@ All the mariners has these ships:
    g++ Battleship.cpp -o Battleship.exe -lwinmm
 
 4. Just enjoy it...
+
+   ![image](https://github.com/user-attachments/assets/296eb629-09d1-4c2c-a5a7-f0fc98f4789c)
+
    
