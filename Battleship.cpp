@@ -11,7 +11,6 @@
 #include "./src/Shooting2.cpp"
 #include "./src/Sign_up.cpp"
 #include "./src/menu_song.cpp"
-#include "./src/explosion.cpp"
 using namespace std;
 
 int main()
