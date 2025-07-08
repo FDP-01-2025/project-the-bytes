@@ -6,7 +6,7 @@ using namespace std;
 
 void saveData(const Jugador &Player)
 {
-    ofstream archivo("SIGN UP.txt", ios::app);
+    ofstream archivo("./src/SIGN UP.txt", ios::app);
     if (!archivo)
     {
         cerr << "Error, the file doesn't work." << endl; //If the document doesn't work

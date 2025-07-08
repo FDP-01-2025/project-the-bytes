@@ -107,7 +107,8 @@ void newCordsplayer2(int i)
         }
     }
 
-    if (i < 7) // It gonna stop if it's okay to put ships in any position
+    if (i < 7)
+    { // It gonna stop if it's okay to put ships in any position
         while (true)
         {
             if (position2 == 'V' || position2 == 'v') // This is only for vertical position
@@ -218,7 +219,7 @@ void newCordsplayer2(int i)
                 }
             }
         }
-
+    }
     for (int p = 0; p < 4; p++) // This is the area around the ship
     {
         {
